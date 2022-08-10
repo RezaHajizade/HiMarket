@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "l5OTgm9Ndfy2WhY3L43ot7iaedVfQCqWyYOIlUXZ4LXMIvaG8XCjfvLzhzkC9VfscjfPufBm3UmauTP+RXweqQ==",
+  "dgSpecHash": "eqbzo5HAt7E9VmqImDGmyAD/Xt7BZdw+hyYURxVB/HC/WPnvXNmZGNNlqHX21ADqjv7Y5khDbYmt78kjukAYOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.7\\microsoft.aspnetcore.cryptography.internal.6.0.7.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.7\\microsoft.aspnetcore.cryptography.keyderivation.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
@@ -11,6 +13,8 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.7\\microsoft.extensions.identity.core.6.0.7.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.7\\microsoft.extensions.identity.stores.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",

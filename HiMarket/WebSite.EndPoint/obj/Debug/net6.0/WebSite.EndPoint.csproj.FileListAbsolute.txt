@@ -65,3 +65,10 @@ C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\obj\De
 C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net6.0\WebSite.EndPoint.pdb
 C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net6.0\WebSite.EndPoint.genruntimeconfig.cache
 C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net6.0\ref\WebSite.EndPoint.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Infrastructure.dll
+C:\Users\AMINSYSTEM\Desktop\New folder\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Infrastructure.pdb

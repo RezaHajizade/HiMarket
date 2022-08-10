@@ -10,8 +10,7 @@ namespace Application.Interfase.Context
 {
     public interface IDataBaseContext
     {
-        DbSet<User> Users { get; set; }
-
+       
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

@@ -1,3 +1,4 @@
+using Infrastructure.IdentityConfigs;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using System.Configuration;
@@ -11,6 +12,17 @@ builder.Services.AddControllersWithViews();
 string connection = builder.Configuration["connectionString:SqlServer"];
 
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
+builder.Services.AddIdentityService(builder.Configuration);
+
+builder.Services.AddAuthorization();
+builder.Services.ConfigureApplicationCookie(option =>
+{
+    option.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+    option.LoginPath = "/account/Login";   
+    option.AccessDeniedPath = "/Account/AccessDenied";
+    option.SlidingExpiration = true;
+});
+
 #endregion
 
 
@@ -29,6 +41,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
