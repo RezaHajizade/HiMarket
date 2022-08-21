@@ -1,3 +1,4 @@
+using Application.Services.Email;
 using Infrastructure.IdentityConfigs;
 using Microsoft.EntityFrameworkCore;
 using Persistence;

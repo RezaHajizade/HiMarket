@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj": {}
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\Application.csproj": {
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\obj\\",
+        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AMINSYSTEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj"
               }
             }
           }
@@ -59,7 +59,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,18 +69,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AMINSYSTEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -123,7 +124,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -132,18 +134,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AMINSYSTEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -160,8 +162,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -195,7 +197,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -204,18 +207,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\obj\\",
+        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AMINSYSTEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -232,11 +235,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Application\\Application.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj"
               },
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Domain\\Domain.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Domain\\Domain.csproj"
               }
             }
           }
@@ -278,7 +281,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -287,18 +291,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj": {
+    "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj",
+        "projectUniqueName": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj",
         "projectName": "WebSite.EndPoint",
-        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj",
+        "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj",
         "packagesPath": "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\WebSite.EndPoint\\obj\\",
+        "outputPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AMINSYSTEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -315,11 +319,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj"
               },
-              "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj"
+              "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -358,9 +362,17 @@
               "target": "Package",
               "version": "[6.0.7, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.2, )"
             }
           },
           "imports": [
@@ -369,7 +381,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -381,7 +394,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

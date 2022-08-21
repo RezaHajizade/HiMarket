@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kWhp9zpOMkcQeNMQy/PKFlmgqIu8ETReMAULk+0UNVE+zs3VKwDZuzZ+6hwirl/ucXjjuiX/MYm0XN8LVLcgeg==",
+  "dgSpecHash": "QZfTPpOlx5AxQluc5WRd+bqHSxHr8CdwApWvLuEXuU+wJ1/rGfLt83RkaMWVWNRJXqTlNuQWi/JyHzrSEyHC4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\New folder\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

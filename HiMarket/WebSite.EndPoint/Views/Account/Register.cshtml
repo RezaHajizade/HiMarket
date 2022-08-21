@@ -1,0 +1,102 @@
+﻿@model WebSite.EndPoint.Models.Register.RegisterViewModel
+
+@{
+    ViewData["Title"] = "ثبت نام";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ثبت نام</h1>
+<hr />
+<main class="page-content">
+    <div class="container">
+        <div class="auth-wrapper">
+            <div class="auth-form shadow-around">
+                <div class="site-logo">
+                    <a href="#">
+                        <img src="~/theme/assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="auth-form-title">
+                    ثبت نام در های مارکت
+                </div>
+                <form asp-action="Register" >
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-element-row">
+                        <label asp-for="FullName" >نام و نام خانوادگی</label>
+                        <div class="form-element-with-icon">
+                            <input asp-for="FullName" class="input-element" >
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+                            @*<i class="fad fa-FullName-alt"></i>*@
+                        </div>
+                    </div>
+
+                    <div class="form-element-row">
+                        <label asp-for="Email" class="label-element">ایمیل</label>
+                        <div class="form-element-with-icon">
+                            <input asp-for="Email" class="input-element" >
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                           @* <i class="fad fa-mobile-alt"></i>*@
+                        </div>
+                    </div>
+
+                    <div class="form-element-row">
+                        <label asp-for="Password" class="label-element">کلمه عبور</label>
+                        <div class="form-element-with-icon">
+                            <input asp-for="Password" class="input-element" >
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                    @*        <i class="fad fa-key-skeleton"></i>*@
+                        </div>
+                    </div>
+
+                    <div class="form-element-row">
+                        <label asp-for="RePassword" class="label-element">تکرارکلمه عبور</label>
+                        <div class="form-element-with-icon">
+                            <input asp-for="RePassword" class="input-element" >
+                            <span asp-validation-for="RePassword" class="text-danger"></span>
+                          @*  <i class="fad fa-key-skeleton"></i>*@
+                        </div>
+                    </div>
+
+                    <div class="form-element-row">
+                        <label asp-for="PhoneNumber" class="label-element">شماره موبایل</label>
+                        <div class="form-element-with-icon">
+                            <input asp-for="PhoneNumber" class="input-element">
+                            <span asp-validation-for="PhoneNumber"></span>
+                           @* <i class="fad fa-mobile-alt"></i>*@
+                        </div>
+                    </div>
+               
+                    <div class="form-element-row">
+                        <label class="container-checkbox">
+                            <a href="#" class="link--with-border-bottom">حریم خصوصی</a> و <a href="#"
+                                                                                             class="link--with-border-bottom">شرایط و قوانین</a> استفاده از سرویس های سایت
+                            های مارکت را مطالعه نموده
+                            و با کلیه موارد آن موافقم.
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="form-element-row text-left">
+                        <input type="submit" value="ثبت نام در های مارکت" class="btn-element btn-success-element">
+                            <i class="fad fa-user-edit"></i>
+                            
+                        </input>
+                    </div>
+
+                   @* <div asp-validation-summary="ModelOnly" class="text-danger"> </div>*@
+                </form>
+                <div class="auth-form-footer">
+                    <span >قبلا در های مارکت ثبت‌نام کرده‌اید؟</span>
+                    <a asp-controller="Account"  asp-action="Login" class="link--with-border-bottom">وارد شوید</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
