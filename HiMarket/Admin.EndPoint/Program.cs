@@ -1,7 +1,14 @@
+using Application.Interfase.Context;
+using Application.Visitors.GetTodayReport;
+using Persistence.MongoContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddTransient<IGetTodayReportService, GetTodayReportService>();
+builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
+
 
 var app = builder.Build();
 

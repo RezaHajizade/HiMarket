@@ -9,7 +9,8 @@
       "Domain/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.7",
-          "Microsoft.Extensions.Identity.Stores": "6.0.7"
+          "Microsoft.Extensions.Identity.Stores": "6.0.7",
+          "MongoDB.Bson": "2.17.1"
         },
         "runtime": {
           "Domain.dll": {}
@@ -178,6 +179,17 @@
           }
         }
       },
+      "MongoDB.Bson/2.17.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "6.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "assemblyVersion": "2.17.1.0",
+            "fileVersion": "2.17.1.0"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
@@ -301,6 +313,13 @@
       "sha512": "sha512-9+PnzmQFfEFNR9J2aDTfJGGupShHjOuGw4VUv+JB044biSHrnmCIMD+mJHmb2H7YryrfBEXDurxQ47gJZdCKNQ==",
       "path": "microsoft.extensions.primitives/6.0.0",
       "hashPath": "microsoft.extensions.primitives.6.0.0.nupkg.sha512"
+    },
+    "MongoDB.Bson/2.17.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IBr5w6ygeUCTobiS4J2UlYeIsnjSJvOOf31g60EkRa3NIeyrYs7Y51HeOvJ8r6NPcKv1hLj8xwoop6hDTetAdA==",
+      "path": "mongodb.bson/2.17.1",
+      "hashPath": "mongodb.bson.2.17.1.nupkg.sha512"
     },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",

@@ -5,9 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using WebSite.EndPoint.Models.Register;
 using WebSite.EndPoint.Models.ViewModels.User;
+using WebSite.EndPoint.Utilities.Filters;
 
 namespace WebSite.EndPoint.Controllers
 {
+    [ServiceFilter(typeof(SaveVisitorFilter))]
     public class AccountController : Controller
     {
         protected readonly UserManager<User> _userManager;

@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSite.EndPoint", "WebSite.EndPoint\WebSite.EndPoint.csproj", "{2A739784-D797-4243-BB03-616DE2B72310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.EndPoint", "Admin.EndPoint\Admin.EndPoint.csproj", "{8531F811-D3B8-4937-80D5-9CF4084E4153}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.EndPoint", "Admin.EndPoint\Admin.EndPoint.csproj", "{8531F811-D3B8-4937-80D5-9CF4084E4153}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

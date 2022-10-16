@@ -258,6 +258,22 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
+      "MongoDB.Bson/2.17.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -641,6 +657,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "MongoDB.Bson/2.17.1": {
+      "sha512": "IBr5w6ygeUCTobiS4J2UlYeIsnjSJvOOf31g60EkRa3NIeyrYs7Y51HeOvJ8r6NPcKv1hLj8xwoop6hDTetAdA==",
+      "type": "package",
+      "path": "mongodb.bson/2.17.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net472/MongoDB.Bson.dll",
+        "lib/net472/MongoDB.Bson.xml",
+        "lib/netstandard2.0/MongoDB.Bson.dll",
+        "lib/netstandard2.0/MongoDB.Bson.xml",
+        "lib/netstandard2.1/MongoDB.Bson.dll",
+        "lib/netstandard2.1/MongoDB.Bson.xml",
+        "mongodb.bson.2.17.1.nupkg.sha512",
+        "mongodb.bson.nuspec",
+        "packageIcon.png"
+      ]
+    },
     "System.Collections.Immutable/6.0.0": {
       "sha512": "l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "type": "package",
@@ -718,7 +753,8 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore >= 6.0.7",
-      "Microsoft.Extensions.Identity.Stores >= 6.0.7"
+      "Microsoft.Extensions.Identity.Stores >= 6.0.7",
+      "MongoDB.Bson >= 2.17.1"
     ]
   },
   "packageFolders": {
@@ -767,6 +803,10 @@
           "Microsoft.Extensions.Identity.Stores": {
             "target": "Package",
             "version": "[6.0.7, )"
+          },
+          "MongoDB.Bson": {
+            "target": "Package",
+            "version": "[2.17.1, )"
           }
         },
         "imports": [

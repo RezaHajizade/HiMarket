@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>@ViewData["Title"] - فروشگاه های مارکت</title>
+     <title>@ViewData["Title"] - فروشگاه  های مارکت</title>
     <!-- font-awesome -->
     <link rel="stylesheet" href="~/theme/assets/css/font-awesome.min.css">
     <!-- Bootstrap 4.5.3 -->
@@ -56,7 +56,7 @@
                     <div class="d-flex align-items-center">
                         <div class="site-logo">
                             <a href="#">
-                                <img src="~/theme/assets/images/logo.png" alt="logo">
+                               @* <img src="~/theme/assets/images/logo.png" alt="logo">*@
                             </a>
                         </div>
                         <div class="search-box">
@@ -178,9 +178,8 @@
                                 </li>
                             </ul>
                         </div>
-                       @* @if(User.Identities.IsAuthenticated)
-                        {*@
-                             <div class="user-item account">
+                      
+                        <div class="user-item account">
                         <a class="btn-auth">
                         <i class="fal fa-user-circle"></i>
                         ورود و عضویت
@@ -223,7 +222,7 @@
                                     <span>کاربر جدید هستید؟</span>
                                     <a asp-controller="Account" asp-action="Register" class="border-bottom-dt">ثبت نام</a>
                                 </li>
-                                <hr>
+                            
                                 <li>
                                     <a href="#">
                                         پروفایل
@@ -236,7 +235,7 @@
                                 </li>
                             </ul>
                         </div>
-                       @* }*@
+                   
                        
                     </div>
                 </div>
@@ -776,7 +775,7 @@
                     <div class="side-navigation">
                         <div class="site-logo">
                             <a href="#">
-                                <img src="~/theme/assets/images/logo.png" alt="logo">
+                               @* <img src="~/theme/assets/images/logo.png" alt="logo">*@
                             </a>
                         </div>
                         <div class="divider"></div>
@@ -997,7 +996,7 @@
                 </div>
                 <div class="site-logo">
                     <a href="#">
-                        <img src="~/theme/assets/images/logo.png" alt="logo">
+                       @* <img src="~/theme/assets/images/logo.png" alt="logo">*@
                     </a>
                 </div>
                 <div class="header-tools">
@@ -1290,7 +1289,7 @@
         <div class="page-loader">
             <div class="page-loader-content">
                 <div class="logo-area">
-                    <img src="~/theme/assets/images/logo.png" alt="">
+                    @*<img src="~/theme/assets/images/logo.png" alt="">*@
                 </div>
                 <span class="loader"></span>
             </div>
@@ -1480,7 +1479,7 @@
                     <div class="col-12 mb-3">
                         <div class="logo-area">
                             <a href="#">
-                                <img src="~/theme/assets/images/logo.png" alt="">
+                                @*<img src="~/theme/assets/images/logo.png" alt="">*@
                             </a>
                         </div>
                     </div>
@@ -1539,6 +1538,12 @@
     <script src="~/theme/assets/js/theme.js"></script>
     <!-- Here goes your custom.js -->
     <script src="~/theme/assets/js/custom.js"></script>
+
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/signalronlinevisitorservice.js"></script>
+
+
+    @await RenderSectionAsync("Scripts", false)
+
 </body>
-@RenderSection("Scripts", false)
 </html>

@@ -1,13 +1,25 @@
+using Application.Interfase.Context;
 using Application.Services.Email;
+using Application.Visitors.SaveVisitorInfo;
+using Application.Visitors.VisitorOnline;
 using Infrastructure.IdentityConfigs;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
+using Persistence.MongoContext;
 using System.Configuration;
+using WebSite.EndPoint.Hubs;
+using WebSite.EndPoint.Utilities.Filters;
+using WebSite.EndPoint.Utilities.Middelwares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
+builder.Services.AddTransient<ISaveVisitorInfoService, SaveVisitorInfoService>();
+builder.Services.AddTransient<IVisitorOnlineService, VisitorOnlineService>();
+builder.Services.AddScoped<SaveVisitorFilter>();
+builder.Services.AddSignalR();
 
 #region Connection String
 string connection = builder.Configuration["connectionString:SqlServer"];
@@ -37,6 +49,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSetVisitorId();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -49,4 +62,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapHub<OnlineVisitorHub>("/chathub");
 app.Run();
