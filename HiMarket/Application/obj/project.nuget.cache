@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "lqH7pWRbuxSh5bdPIpNkHXyk8oXkGBr5El/sNO18lzi8WtVpYmeKgoZ3MbrFU78yCK+a22ObvwhM5mzACeCssQ==",
+  "dgSpecHash": "c/X4FW2Hj4ST1I5rzQnZNdIxfBA3mumD/GYEcv6Wu8ylA8NjO+dvPjLF3GvGO9eMmnqBXeMHRW50EwWea1ok3w==",
   "success": true,
   "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.7\\microsoft.aspnetcore.cryptography.internal.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.7\\microsoft.aspnetcore.cryptography.keyderivation.6.0.7.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.7\\microsoft.entityframeworkcore.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.7\\microsoft.entityframeworkcore.abstractions.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.7\\microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",

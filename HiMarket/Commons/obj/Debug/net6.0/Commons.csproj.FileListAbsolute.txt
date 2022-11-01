@@ -1,0 +1,12 @@
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\bin\Debug\net6.0\Commons.deps.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\bin\Debug\net6.0\Commons.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\bin\Debug\net6.0\Commons.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.csproj.AssemblyReference.cache
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.AssemblyInfoInputs.cache
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.AssemblyInfo.cs
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.csproj.CoreCompileInputs.cache
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\refint\Commons.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\Commons.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Commons\obj\Debug\net6.0\ref\Commons.dll

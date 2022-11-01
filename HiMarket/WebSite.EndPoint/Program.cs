@@ -1,3 +1,4 @@
+using Application.Catalogs.CatalogTypes;
 using Application.Interfase.Context;
 using Application.Services.Email;
 using Application.Visitors.SaveVisitorInfo;
@@ -22,8 +23,8 @@ builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();
 
 #region Connection String
-string connection = builder.Configuration["connectionString:SqlServer"];
-
+//string connection = builder.Configuration["ConnectionString:SqlServer"];
+string connection = builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
 builder.Services.AddIdentityService(builder.Configuration);
 

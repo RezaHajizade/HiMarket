@@ -1,7 +1,10 @@
 ﻿using Application.Interfase.Context;
 using Domain.Attributes;
+using Domain.Catalogs;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
+using Persistence.EntityConfigurations;
+using Persistence.Seeds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,20 +20,29 @@ namespace Persistence
         {
 
         }
+        public DbSet<CatalogBrand> CatalogBrands { get; set; }
+        public DbSet<CatalogType> CatalogTypes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            foreach (var entitytype in builder.Model.GetEntityTypes())
+            foreach (var entityType in builder.Model.GetEntityTypes())
             {
-                if (entitytype.ClrType.GetCustomAttributes(typeof(AuditableAttribute), true).Length > 0)
+                if (entityType.ClrType.GetCustomAttributes(typeof(AuditableAttribute), true).Length > 0)
                 {
-                    builder.Entity(entitytype.Name).Property<DateTime>("InsertTime");
-                    builder.Entity(entitytype.Name).Property<DateTime>("UpdateTime");
-                    builder.Entity(entitytype.Name).Property<DateTime>("RemoveTime");
-                    builder.Entity(entitytype.Name).Property<bool>("IsRemove");
+                    builder.Entity(entityType.Name).Property<DateTime>("InsertTime").HasDefaultValue(DateTime.Now);
+                    builder.Entity(entityType.Name).Property<DateTime?>("UpdateTime");
+                    builder.Entity(entityType.Name).Property<DateTime?>("RemoveTime");
+                    builder.Entity(entityType.Name).Property<bool>("IsRemoved").HasDefaultValue(false);
                 }
             }
 
+            builder.Entity<CatalogType>()
+                .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
 
+            builder.ApplyConfiguration(new CatalogTypeEntityTypeConfiguration());
+            builder.ApplyConfiguration(new CatalogBrandEntityTypeConfiguration());
+         
+
+            DataBaseContextSeed.CatalogSeed(builder);
             base.OnModelCreating(builder);
         }
         public override int SaveChanges()
@@ -48,11 +60,11 @@ namespace Persistence
                 var Inserted = entityType.FindProperty("InsertTime");
                 var Updated = entityType.FindProperty("UpdateTime");
                 var RemoveTime = entityType.FindProperty("RemoveTime");
-                var IsRemoved = entityType.FindProperty("IsRemove");
+                var IsRemoved = entityType.FindProperty("IsRemoved");
 
                 if(item.State==EntityState.Added && Inserted!=null)
                 {
-                    item.Property("Inserttime").CurrentValue = DateTime.Now;
+                    item.Property("InsertTime").CurrentValue = DateTime.Now;
                 }
 
                 if (item.State == EntityState.Modified && Updated != null)
@@ -63,13 +75,10 @@ namespace Persistence
                 if (item.State == EntityState.Deleted && RemoveTime != null && IsRemoved !=null)
                 {
                     item.Property("RemoveTime").CurrentValue = DateTime.Now;
-                    item.Property("IsRemove").CurrentValue = true;
-                }
-
-               
-
+                    item.Property("IsRemoved").CurrentValue = true;
+                    item.State= EntityState.Modified;
+                }          
             }
-
             return base.SaveChanges();
         }
     }

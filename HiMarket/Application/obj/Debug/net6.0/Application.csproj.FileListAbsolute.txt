@@ -28,3 +28,5 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\obj\Debug\net6.0\Appli
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\obj\Debug\net6.0\refint\Application.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\obj\Debug\net6.0\Application.pdb
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\obj\Debug\net6.0\ref\Application.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\bin\Debug\net6.0\Commons.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Application\bin\Debug\net6.0\Commons.pdb

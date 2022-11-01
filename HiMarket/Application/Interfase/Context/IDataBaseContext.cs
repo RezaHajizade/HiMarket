@@ -1,4 +1,5 @@
-﻿using Domain.Entity;
+﻿using Domain.Catalogs;
+using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,9 @@ namespace Application.Interfase.Context
 {
     public interface IDataBaseContext
     {
-       
+         DbSet<CatalogBrand> CatalogBrands { get; set; }
+         DbSet<CatalogType> CatalogTypes { get; set; }
+        // DbSet<CatalogItem> CatalogItems { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
