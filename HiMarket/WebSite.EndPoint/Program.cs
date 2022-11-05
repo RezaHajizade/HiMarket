@@ -1,9 +1,11 @@
 using Application.Catalogs.CatalogTypes;
+using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
 using Application.Services.Email;
 using Application.Visitors.SaveVisitorInfo;
 using Application.Visitors.VisitorOnline;
 using Infrastructure.IdentityConfigs;
+using Infrastructure.MappingProfile;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Persistence.MongoContext;
@@ -19,11 +21,16 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
 builder.Services.AddTransient<ISaveVisitorInfoService, SaveVisitorInfoService>();
 builder.Services.AddTransient<IVisitorOnlineService, VisitorOnlineService>();
+builder.Services.AddTransient<IGetMenuItemService, GetMenuItemService>();
 builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();
 
+//mapper
+builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
+
 #region Connection String
-//string connection = builder.Configuration["ConnectionString:SqlServer"];
+builder.Services.AddTransient<IDataBaseContext, DataBaseContext>();
+ 
 string connection = builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
 builder.Services.AddIdentityService(builder.Configuration);

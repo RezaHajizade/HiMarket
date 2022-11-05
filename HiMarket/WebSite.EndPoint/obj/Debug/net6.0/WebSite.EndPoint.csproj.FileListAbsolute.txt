@@ -290,7 +290,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Build.Locator.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -571,3 +570,7 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Commons.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Commons.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Build.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
