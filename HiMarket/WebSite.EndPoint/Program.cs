@@ -28,6 +28,8 @@ builder.Services.AddSignalR();
 //mapper
 builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
 
+
+
 #region Connection String
 builder.Services.AddTransient<IDataBaseContext, DataBaseContext>();
  

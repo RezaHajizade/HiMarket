@@ -574,3 +574,16 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net6.0\WebSite.EndPoint.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.deps.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.runtimeconfig.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.staticwebassets.runtime.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.exe
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\FubarCoder.RestSharp.Portable.Core.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\FubarCoder.RestSharp.Portable.HttpClient.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\RestSharp.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net6.0\StaticFile.pdb

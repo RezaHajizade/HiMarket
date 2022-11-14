@@ -1,4 +1,5 @@
 ﻿using Admin.EndPoint.ViewModels.Catalogs;
+using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogTypes;
 using AutoMapper;
 using Domain.Catalogs;
@@ -10,6 +11,9 @@ namespace Admin.EndPoint.MappingProfiles
         public CatalogVMMappingProfile()
         {
             CreateMap<CatalogTypeDto,CatalogTypeViewModel>().ReverseMap();
+        
         }
+
+
     }
 }

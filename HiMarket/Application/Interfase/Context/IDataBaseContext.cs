@@ -13,7 +13,7 @@ namespace Application.Interfase.Context
     {
          DbSet<CatalogBrand> CatalogBrands { get; set; }
          DbSet<CatalogType> CatalogTypes { get; set; }
-        // DbSet<CatalogItem> CatalogItems { get; set; }
+         DbSet<CatalogItem> CatalogItems { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

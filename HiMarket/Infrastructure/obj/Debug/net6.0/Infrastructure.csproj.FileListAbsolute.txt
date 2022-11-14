@@ -38,3 +38,11 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\obj\Debug\net6.0\In
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\obj\Debug\net6.0\ref\Infrastructure.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\Commons.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\Commons.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.deps.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.runtimeconfig.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\appsettings.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.staticwebassets.runtime.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.exe
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Infrastructure\bin\Debug\net6.0\StaticFile.pdb

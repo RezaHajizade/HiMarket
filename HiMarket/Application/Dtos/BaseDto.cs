@@ -7,28 +7,33 @@ using System.Threading.Tasks;
 
 namespace Application.Dtos
 {
+
     public class BaseDto<T>
     {
-        public BaseDto(T data, List<string> message, bool isSuccess)
+        public BaseDto(bool IsSuccess, List<string> Message, T Data)
         {
-            Data = data;
-            Message = message;
-            IsSuccess = isSuccess;
+            this.IsSuccess = IsSuccess;
+            this.Message = Message;
+            this.Data = Data;
         }
 
-        public T Data { get; set; }
-        public List<String> Message { get;private  set; }
+        public T Data { get; private set; }
+        public List<string> Message { get; private set; }
         public bool IsSuccess { get; private set; }
+
     }
+
 
     public class BaseDto
     {
-        public BaseDto( List<string> message, bool isSuccess)
+        public BaseDto(bool IsSuccess, List<string> Message)
         {
-            Message = message;
-            IsSuccess = isSuccess;
+            this.IsSuccess = IsSuccess;
+            this.Message = Message;
         }
-        public List<String> Message { get; private set; }
+        public List<string> Message { get; private set; }
         public bool IsSuccess { get; private set; }
     }
+
+
 }

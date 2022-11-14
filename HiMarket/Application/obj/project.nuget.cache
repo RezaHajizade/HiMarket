@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "c/X4FW2Hj4ST1I5rzQnZNdIxfBA3mumD/GYEcv6Wu8ylA8NjO+dvPjLF3GvGO9eMmnqBXeMHRW50EwWea1ok3w==",
+  "dgSpecHash": "RMbiEeFNoFeK20CALakKQUVeVnt6Ztdvqjpsb4nKLcYQ45MO+jMFqgVVs2Td2DC6PnuiMWRUKrOuQHvjRqR1iQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.7\\microsoft.aspnetcore.cryptography.internal.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.7\\microsoft.aspnetcore.cryptography.keyderivation.6.0.7.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

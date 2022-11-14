@@ -90,3 +90,17 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Co
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Infrastructure.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Infrastructure.pdb
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Commons.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\obj\Debug\net6.0\Admin.EndPoint.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.deps.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.runtimeconfig.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.staticwebassets.runtime.json
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.exe
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\FubarCoder.RestSharp.Portable.Core.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\FubarCoder.RestSharp.Portable.HttpClient.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\RestSharp.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.pdb

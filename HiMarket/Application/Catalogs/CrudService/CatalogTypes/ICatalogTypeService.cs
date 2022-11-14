@@ -28,7 +28,7 @@ namespace Application.Catalogs.CatalogTypes
         private readonly IDataBaseContext _context;
         private readonly IMapper mapper;
 
-        public CatalogTypeService(IDataBaseContext context,IMapper mapper)
+        public CatalogTypeService(IDataBaseContext context, IMapper mapper)
         {
             _context = context;
             this.mapper = mapper;
@@ -40,22 +40,23 @@ namespace Application.Catalogs.CatalogTypes
             _context.SaveChanges();
             return new BaseDto<CatalogTypeDto>
                (
-                 mapper.Map<CatalogTypeDto>(model),              
+                        true,
                  new List<string> { $"تایپ {model.Type}  با موفقیت در سیستم ثبت شد" },
-                 true
+                 mapper.Map<CatalogTypeDto>(model)
              );
         }
 
         public BaseDto<CatalogTypeDto> Edit(CatalogTypeDto catalogTypeDto)
         {
-            var model=_context.CatalogTypes.FirstOrDefault(p=>p.Id==catalogTypeDto.Id);
+            var model = _context.CatalogTypes.FirstOrDefault(p => p.Id == catalogTypeDto.Id);
             mapper.Map(catalogTypeDto, model);
             _context.SaveChanges();
             return new BaseDto<CatalogTypeDto>(
-                 mapper.Map<CatalogTypeDto>(model),
+                 true,
                  new List<string> { $"تایپ {model.Type} با موفقیت در سیستم ویرایش شد" },
-                 true
-            );                                                                     
+
+                  mapper.Map<CatalogTypeDto>(model)
+            );
         }
 
         public BaseDto<CatalogTypeDto> FindById(int Id)
@@ -64,14 +65,14 @@ namespace Application.Catalogs.CatalogTypes
             var result = mapper.Map<CatalogTypeDto>(data);
 
             return new BaseDto<CatalogTypeDto>(
-                result,
+                true,
                 null,
-                true
+                result
                 );
-                                     
+
         }
 
-        public PaginatedItemDto<CatalogTypeListDto> GetList(int? parentId, int page, int pageSize)      
+        public PaginatedItemDto<CatalogTypeListDto> GetList(int? parentId, int page, int pageSize)
         {
             int totalCount = 0;
             var model = _context.CatalogTypes
@@ -87,10 +88,11 @@ namespace Application.Catalogs.CatalogTypes
             _context.CatalogTypes.Remove(catalogType);
             _context.SaveChanges();
             return new BaseDto(
-                new List<string> { "آیتم با موفقیت حذف شد" },
-                true
+                true,
+                new List<string> { "آیتم با موفقیت حذف شد" }
+                
                 );
-         
+
         }
     }
 
