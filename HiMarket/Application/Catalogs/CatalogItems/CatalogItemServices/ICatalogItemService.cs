@@ -1,11 +1,14 @@
-﻿using Application.Interfase.Context;
+﻿using Application.Dtos;
+using Application.Interfase.Context;
 using AutoMapper;
+using Commons;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MongoDB.Driver.WriteConcern;
 
 namespace Application.Catalogs.CatalogItems.CatalogItemServices
 {
@@ -13,6 +16,7 @@ namespace Application.Catalogs.CatalogItems.CatalogItemServices
     {
         List<CatalogBrandDto> GetBrand();
         List<ListCatalogTypeDto> GetCatalogType();
+        PaginatedItemDto<CatalogItemListItemDto> GetCatalogList(int page,int pageSize); 
     }
     public class CatalogItemService : ICatalogItemService
     {
@@ -33,6 +37,21 @@ namespace Application.Catalogs.CatalogItems.CatalogItemServices
 
             var data = mapper.Map<List<CatalogBrandDto>>(brands);
             return data;
+        }
+
+        public PaginatedItemDto<CatalogItemListItemDto> GetCatalogList(int page, int pageSize)        
+        
+        {
+            int rowcount=0;
+            var catalogItem = context.CatalogItems
+                .Include(p => p.CatalogBrand)               
+                .Include(p=>p.CatalogType)                        
+                .ToPaged(page, pageSize, out rowcount);
+
+            var data = mapper.Map<List<CatalogItemListItemDto>>(catalogItem);
+       
+            return new PaginatedItemDto<CatalogItemListItemDto>(page, pageSize,rowcount,data);
+                
         }
 
         public List<ListCatalogTypeDto> GetCatalogType()
@@ -62,6 +81,19 @@ namespace Application.Catalogs.CatalogItems.CatalogItemServices
     public class ListCatalogTypeDto
     {
         public int Id { get; set; }
-        public string Type { get; set; }
+        public string? Type { get; set; }
+    }
+
+    public class CatalogItemListItemDto
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public int Price { get; set; }
+        public string? Type { get; set; }
+        public string? Brand { get; set; }
+        public int AvailableStock { get; set; }
+        public int RestockThreshold { get; set; }
+        public int MaxStockThreshold { get; set; }
+
     }
 }

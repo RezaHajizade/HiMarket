@@ -1,6 +1,7 @@
 ﻿using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogTypes;
+using Application.Catalogs.CrudService.CatalogItems;
 using Application.Catalogs.GetMenuItem;
 using AutoMapper;
 using AutoMapper.Configuration.Conventions;
@@ -43,11 +44,18 @@ namespace Infrastructure.MappingProfile
                  .ForMember(dest => dest.Images, opt =>
                  opt.MapFrom(src => src.CatalogItemImages)).ReverseMap();
 
-
+            CreateMap<CatalogItem, CatalogItemListItemDto>()
+            .ForMember(dest => dest.Brand, opt =>
+            opt.MapFrom(src => src.CatalogBrand.Brand))
+            .ForMember(dest => dest.Type, opt =>
+            opt.MapFrom(src => src.CatalogType.Type));
 
             //-------------------
             CreateMap<CatalogBrand, CatalogBrandDto>().ReverseMap();
             CreateMap<CatalogType, CatalogTypeDto>().ReverseMap();
+
+            CreateMap<CatalogItem, CatalogItemDto>().ReverseMap();
+
         }
     }
 }

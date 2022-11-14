@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xs8O7wu1xpB5B4R9nJcK5tz1PP6bZbbCcES2KLBwa70=",
+  "Hash": "upyvR8KUYWmE0O7L62Ia4RWArfhqcNh2M9N59zLMkM8=",
   "Source": "Admin.EndPoint",
   "BasePath": "_content/Admin.EndPoint",
   "Mode": "Default",
@@ -17680,6 +17680,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\images\\2022\\2022-11\\3a4a9e94-015d-4df3-836b-8930eb4a29e007.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\Resources\\images\\2022\\2022-11\\636e805f-2193-418d-8ce7-b54a2aec5149030.jpg",
+      "SourceId": "StaticFile",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\",
+      "BasePath": "_content/StaticFile",
+      "RelativePath": "Resources/images/2022/2022-11/636e805f-2193-418d-8ce7-b54a2aec5149030.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\images\\2022\\2022-11\\636e805f-2193-418d-8ce7-b54a2aec5149030.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\Resources\\images\\2022\\2022-11\\636e805f-2193-418d-8ce7-b54a2aec5149031.jpg",
+      "SourceId": "StaticFile",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\",
+      "BasePath": "_content/StaticFile",
+      "RelativePath": "Resources/images/2022/2022-11/636e805f-2193-418d-8ce7-b54a2aec5149031.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\images\\2022\\2022-11\\636e805f-2193-418d-8ce7-b54a2aec5149031.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\Resources\\images\\2022\\2022-11\\abd98622-78ab-4830-9ae7-fa9d524f5dd703.jpg",
+      "SourceId": "StaticFile",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\",
+      "BasePath": "_content/StaticFile",
+      "RelativePath": "Resources/images/2022/2022-11/abd98622-78ab-4830-9ae7-fa9d524f5dd703.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\images\\2022\\2022-11\\abd98622-78ab-4830-9ae7-fa9d524f5dd703.jpg"
     }
   ]
 }
