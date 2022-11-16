@@ -54,7 +54,9 @@ namespace Infrastructure.MappingProfile
             CreateMap<CatalogBrand, CatalogBrandDto>().ReverseMap();
             CreateMap<CatalogType, CatalogTypeDto>().ReverseMap();
 
-            CreateMap<CatalogItem, CatalogItemDto>().ReverseMap();
+            CreateMap<CatalogItem, CatalogItemEditDeleteGetListServiceDto>().ReverseMap();
+
+
 
         }
     }

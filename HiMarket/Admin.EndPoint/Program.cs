@@ -2,6 +2,7 @@ using Admin.EndPoint.MappingProfiles;
 using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogTypes;
+using Application.Catalogs.CrudService.CatalogItems;
 using Application.Interfase.Context;
 using Application.Visitors.GetTodayReport;
 using FluentValidation;
@@ -23,6 +24,7 @@ builder.Services.AddTransient<ICatalogTypeService, CatalogTypeService>();
 builder.Services.AddTransient<IAddNewCatalogItemService, AddNewCatalogItemService>();
 builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
+builder.Services.AddTransient<ICatalogItemEditDeleteGetListService, CatalogItemEditDeleteGetListService>();
 
 
 #region connection String SqlServer

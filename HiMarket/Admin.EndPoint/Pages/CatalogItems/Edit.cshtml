@@ -1,0 +1,113 @@
+﻿@page
+@model Admin.EndPoint.Pages.CatalogItems.EditModel
+@{
+}
+
+<section class="card">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title-wrap bar-success">
+                        <h4 class="card-title mb-0 ">ویرایش کاتالوگ </h4>
+                        
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form id="createForm" asp-page="edit" class="form" method="post">
+                        @if (Model.Message != null)
+                        {
+                            @foreach (var item in Model.Message)
+                            {
+                                <div class="alert alert-info">
+                                    <p>@item</p>
+                                </div>
+                            }
+                        }
+                        <h4 class="card-title mb-0 "> <a asp-page="index" class="btn btn-info">برگشت به لیست</a> </h4>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">نام کاتالوگ </label>
+                                    <input type="text" asp-for="catalogItemViewModel.Name" class="form-control" id="Name">
+                                    <span asp-validation-for="catalogItemViewModel.Name" class="text-danger"></span>
+                                </fieldset>
+                            </div>                               
+
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput"> تعداد موجودی</label>
+                                    <input type="number" asp-for="catalogItemViewModel.AvailableStock" class="form-control" id="AvailableStock">
+                                    <span asp-validation-for="catalogItemViewModel.AvailableStock" class="text-danger"></span>
+
+                                </fieldset>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">حداقل برای سفارش مجدد</label>
+                                    <input type="number" asp-for="catalogItemViewModel.RestockThreshold" class="form-control" id="RestockThreshold">
+                                    <span asp-validation-for="catalogItemViewModel.RestockThreshold" class="text-danger"></span>
+
+                                </fieldset>
+                            </div>
+
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput">حداکثر توان ذخیره در انبار</label>
+                                    <input type="number" asp-for="catalogItemViewModel.MaxStockThreshold" class="form-control" id="MaxStockThreshold">
+                                    <span asp-validation-for="catalogItemViewModel.MaxStockThreshold" class="text-danger"></span>
+                                </fieldset>
+                            </div>
+
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-xl-4 col-lg-6 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput"> قیمت</label>
+                                    <input type="number" asp-for="catalogItemViewModel.Price" class="form-control" id="Price">
+                                    <span asp-validation-for="catalogItemViewModel.Price" class="text-danger"></span>
+
+                                </fieldset>
+                            </div>
+                      
+                        </div>
+                        <hr />
+       
+
+                        <div class="card col-md-12 row">
+                            <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                                <fieldset class="form-group">
+                                    <label for="basicInput"> توضیحات</label>
+                                    <textarea id="Description" asp-for="catalogItemViewModel.Description" class="form-control " rows="8"></textarea>
+                                    <span asp-validation-for="catalogItemViewModel.Description" class="text-danger"></span>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 mb-1">
+                            <fieldset class="form-group">
+                                <input type="hidden" asp-for="catalogItemViewModel.Id" />
+                                <input type="submit" name="time" value="ثبت" class="btn btn-primary">
+                               
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
