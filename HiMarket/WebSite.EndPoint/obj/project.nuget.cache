@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MyB8D1IBV0b3eXbK5+kTYdSZftO1yhwEUEkkgoNs3/3MX4j7Jsq5QcKeM+eE/UbTraypBsXQ63Ty339dMVdY3g==",
+  "dgSpecHash": "5hrU+JoUtX9MohoRLPPhzg38OxE3+ofOqY5t4GZXacJ7rJrwY8uHbz17gTHIBA5calh5ZMOKf59lddJuLTLExw==",
   "success": true,
   "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\WebSite.EndPoint\\WebSite.EndPoint.csproj",
   "expectedPackageFiles": [
@@ -100,10 +100,10 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.bson\\2.17.1\\mongodb.bson.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver\\2.17.1\\mongodb.driver.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver.core\\2.17.1\\mongodb.driver.core.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.5\\mongodb.libmongocrypt.1.5.5.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver\\2.18.0\\mongodb.driver.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver.core\\2.18.0\\mongodb.driver.core.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.libmongocrypt\\1.6.0\\mongodb.libmongocrypt.1.6.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\nuget.common\\6.2.1\\nuget.common.6.2.1.nupkg.sha512",
@@ -133,6 +133,7 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
@@ -223,7 +224,8 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\uaparser\\3.1.47\\uaparser.3.1.47.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\xunit.abstractions\\2.0.3\\xunit.abstractions.2.0.3.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512"
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
   ],
   "logs": []
 }

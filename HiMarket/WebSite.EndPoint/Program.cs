@@ -1,3 +1,5 @@
+using Application.Catalogs.CatalogItems.GetCatalogItemPLP;
+using Application.Catalogs.CatalogItems.UriComposer;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
@@ -22,6 +24,10 @@ builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>
 builder.Services.AddTransient<ISaveVisitorInfoService, SaveVisitorInfoService>();
 builder.Services.AddTransient<IVisitorOnlineService, VisitorOnlineService>();
 builder.Services.AddTransient<IGetMenuItemService, GetMenuItemService>();
+builder.Services.AddTransient<IUriComposerService, UriComposerService>();
+builder.Services.AddTransient<IGetCatalogItemPLPService, GetCatalogItemPLPService>();
+
+
 builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();
 

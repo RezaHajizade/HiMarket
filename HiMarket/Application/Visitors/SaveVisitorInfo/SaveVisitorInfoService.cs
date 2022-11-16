@@ -6,18 +6,17 @@ namespace Application.Visitors.SaveVisitorInfo
 {
     public class SaveVisitorInfoService : ISaveVisitorInfoService
     {
-        private readonly IMongoCollection<Visitor> _visitormongoCollection;
         private readonly IMongoDbContext<Visitor> _mongoDbContext;
+        private readonly IMongoCollection<Visitor> _visitorMongoCollection;
 
         public SaveVisitorInfoService(IMongoDbContext<Visitor> mongoDbContext)
         {
             _mongoDbContext = mongoDbContext;
-            _visitormongoCollection = _mongoDbContext.GetCollection();
+            _visitorMongoCollection = _mongoDbContext.GetCollection();
         }
-
         public void Execute(RequestSaveVisitorInfoDto request)
         {
-            _visitormongoCollection.InsertOne(new Visitor
+            _visitorMongoCollection.InsertOne(new Visitor
             {
                 Browser = new VisitorVersion
                 {
@@ -34,17 +33,17 @@ namespace Application.Visitors.SaveVisitorInfo
                 },
                 Ip = request.Ip,
                 Method = request.Method,
-                OperatingSystem=new VisitorVersion
+                OperatingSystem = new VisitorVersion
                 {
-                    Family=request.OperatingSystem.Family,
-                    Version=request.OperatingSystem.Version,
+                    Family = request.OperatingSystem.Family,
+                    Version = request.OperatingSystem.Version
                 },
                 PhysicalPath = request.PhysicalPath,
                 Protocol = request.Protocol,
-                ReferreLink = request.ReferreLink, 
+                ReferreLink = request.ReferreLink,
                 VisitorId = request.VisitorId,
-                Time=DateTime.Now,
-            }) ;
+                Time = DateTime.Now,
+            });
         }
     }
 }

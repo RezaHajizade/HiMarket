@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DIjksDNAnTYfocq1aIywg8xZAxqBIj5HL4BYsbleMDXkI28IYbqmvvnMFO31sNfLc1L5ZxwTEUQJ9xJZQCiezQ==",
+  "dgSpecHash": "PQUUcAsmv+X1HXlgYq+8zFoa2VcGAyqvuFBTg3PMs047NUyXfS9DNnFrhUESxwEp+VV+kpwAbrPlkKe4TaToEw==",
   "success": true,
   "projectFilePath": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -63,10 +63,10 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.primitives\\4.0.1\\microsoft.win32.primitives.4.0.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.bson\\2.17.1\\mongodb.bson.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver\\2.17.1\\mongodb.driver.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver.core\\2.17.1\\mongodb.driver.core.2.17.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.libmongocrypt\\1.5.5\\mongodb.libmongocrypt.1.5.5.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.bson\\2.18.0\\mongodb.bson.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver\\2.18.0\\mongodb.driver.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.driver.core\\2.18.0\\mongodb.driver.core.2.18.0.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\mongodb.libmongocrypt\\1.6.0\\mongodb.libmongocrypt.1.6.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\netstandard.library\\1.6.0\\netstandard.library.1.6.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\restsharp\\106.11.7\\restsharp.106.11.7.nupkg.sha512",
@@ -75,6 +75,7 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\runtime.native.system.net.http\\4.0.1\\runtime.native.system.net.http.4.0.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\runtime.native.system.security.cryptography\\4.0.0\\runtime.native.system.security.cryptography.4.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.appcontext\\4.1.0\\system.appcontext.4.1.0.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.collections\\4.0.11\\system.collections.4.0.11.nupkg.sha512",
@@ -150,7 +151,8 @@
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.readerwriter\\4.0.11\\system.xml.readerwriter.4.0.11.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
-    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512"
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\system.xml.xmlserializer\\4.0.11\\system.xml.xmlserializer.4.0.11.nupkg.sha512",
+    "C:\\Users\\AMINSYSTEM\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
   ],
   "logs": []
 }

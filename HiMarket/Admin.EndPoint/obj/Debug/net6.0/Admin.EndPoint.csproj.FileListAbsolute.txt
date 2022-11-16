@@ -62,13 +62,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\ru
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\linux\native\libsnappy64.so
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\linux\native\libzstd.so
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\osx\native\libsnappy64.dylib
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\osx\native\libzstd.dylib
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win\native\libzstd.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win\native\snappy32.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win\native\snappy64.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\linux\native\libmongocrypt.so
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\osx\native\libmongocrypt.dylib
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\runtimes\win\native\mongocrypt.dll
@@ -104,3 +97,5 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Ne
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\RestSharp.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\StaticFile.pdb
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\Snappier.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net6.0\ZstdSharp.dll

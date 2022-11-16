@@ -65,7 +65,7 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.17.1, )"
+              "version": "[2.18.0, )"
             }
           },
           "imports": [
@@ -189,7 +189,7 @@
             },
             "MongoDB.Bson": {
               "target": "Package",
-              "version": "[2.17.1, )"
+              "version": "[2.18.0, )"
             }
           },
           "imports": [
@@ -277,7 +277,7 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.17.1, )"
+              "version": "[2.18.0, )"
             }
           },
           "imports": [
