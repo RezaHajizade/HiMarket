@@ -1,5 +1,6 @@
 ﻿using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
+using Application.Catalogs.CatalogItems.GetCatalogItemPDP;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.CrudService.CatalogItems;
 using Application.Catalogs.GetMenuItem;
@@ -34,7 +35,7 @@ namespace Infrastructure.MappingProfile
                 opt.MapFrom(src => src.SubType));
 
             //----------------------
-            // پروفایل مپ افزودن مورد جدید
+            
             CreateMap<CatalogItemFeature, AddNewCatalogItemFeature_dto>().ReverseMap();
             CreateMap<CatalogItemImage, AddNewCatalogItemImage_Dto>().ReverseMap();
 
@@ -55,7 +56,6 @@ namespace Infrastructure.MappingProfile
             CreateMap<CatalogType, CatalogTypeDto>().ReverseMap();
 
             CreateMap<CatalogItem, CatalogItemEditDeleteGetListServiceDto>().ReverseMap();
-
 
 
         }
