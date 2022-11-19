@@ -1,4 +1,5 @@
-﻿using Domain.Catalogs;
+﻿using Domain.Baskets;
+using Domain.Catalogs;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -14,6 +15,8 @@ namespace Application.Interfase.Context
          DbSet<CatalogBrand> CatalogBrands { get; set; }
          DbSet<CatalogType> CatalogTypes { get; set; }
          DbSet<CatalogItem> CatalogItems { get; set; }
+         DbSet<Bascket> basckets { get; set; }
+        DbSet<BascketItem> BascketItems { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

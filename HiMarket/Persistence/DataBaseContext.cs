@@ -1,5 +1,6 @@
 ﻿using Application.Interfase.Context;
 using Domain.Attributes;
+using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,9 @@ namespace Persistence
         public DbSet<CatalogBrand> CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
         public DbSet<CatalogItem> CatalogItems { get; set; }
+        public DbSet<Bascket> basckets { get; set; }
+        public DbSet<BascketItem> BascketItems { get;set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())
