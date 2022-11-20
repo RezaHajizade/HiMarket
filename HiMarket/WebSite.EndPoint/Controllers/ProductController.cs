@@ -17,7 +17,6 @@ namespace WebSite.EndPoint.Controllers
         public IActionResult Index(int page=1,int pageSize=20)
         {
             var data = getCatalogItemPLPService.Execute(page, pageSize);
-
             return View(data);
         }
 

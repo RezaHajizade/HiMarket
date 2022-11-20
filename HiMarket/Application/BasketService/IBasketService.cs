@@ -13,6 +13,7 @@ namespace Application.BasketService
     public  interface IBasketService
     {
         BasketDto GetOrCreateBasketForUser(string BuyerId);
+        void AddItemToService(int basketId, int catalogItemId, int quantity = 1);
     }
     public class BasketService : IBasketService
     {
@@ -24,6 +25,17 @@ namespace Application.BasketService
             this.context = context;
             this.uriComposerService = uriComposerService;
         }
+
+        public void AddItemToService(int basketId, int catalogItemId, int quantity = 1)
+        {
+          var basket=context.basckets.FirstOrDefault(b => b.Id == basketId);
+            if (basket == null)
+                throw new Exception("");
+            var catalog=context.CatalogItems.Find(catalogItemId);
+            basket.AddItem(catalog.Price, quantity, catalogItemId);
+            context.SaveChanges();
+        }
+
         public BasketDto GetOrCreateBasketForUser(string BuyerId)
         {
             var Basket = context.basckets
@@ -34,6 +46,7 @@ namespace Application.BasketService
 
             if(Basket==null)
             {
+                //create basket of buy
                 return CreateBasketForUser(BuyerId);
             }
 
@@ -50,9 +63,7 @@ namespace Application.BasketService
                     UnitPrice = item.UnitPrice,
                     ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?.CatalogItemImages?.FirstOrDefault()?.Src ?? "")
                 }).ToList(),
-                
-
-
+               
             };
 
         }
