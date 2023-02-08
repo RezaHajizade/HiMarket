@@ -5,6 +5,7 @@ using Domain.Catalogs;
 using Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Persistence.EntityConfigurations;
+using Persistence.Migrations;
 using Persistence.Seeds;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace Persistence
 {
     public class DataBaseContext : DbContext, IDataBaseContext
     {
-        public DataBaseContext(DbContextOptions<DataBaseContext> options) 
+        public DataBaseContext(DbContextOptions<DataBaseContext> options)
             : base(options)
         {
 
@@ -24,8 +25,8 @@ namespace Persistence
         public DbSet<CatalogBrand> CatalogBrands { get; set; }
         public DbSet<CatalogType> CatalogTypes { get; set; }
         public DbSet<CatalogItem> CatalogItems { get; set; }
-        public DbSet<Bascket> basckets { get; set; }
-        public DbSet<BascketItem> BascketItems { get;set; }
+        public DbSet<Baskets> Baskets { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -43,9 +44,15 @@ namespace Persistence
             builder.Entity<CatalogType>()
                 .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
 
+            builder.Entity<BasketItem>()
+                .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
+
+            builder.Entity<Baskets>()
+                .HasQueryFilter(m => EF.Property<bool>(m, "IsRemoved") == false);
+
             builder.ApplyConfiguration(new CatalogTypeEntityTypeConfiguration());
             builder.ApplyConfiguration(new CatalogBrandEntityTypeConfiguration());
-         
+
 
             DataBaseContextSeed.CatalogSeed(builder);
             base.OnModelCreating(builder);
@@ -67,7 +74,7 @@ namespace Persistence
                 var RemoveTime = entityType.FindProperty("RemoveTime");
                 var IsRemoved = entityType.FindProperty("IsRemoved");
 
-                if(item.State==EntityState.Added && Inserted!=null)
+                if (item.State == EntityState.Added && Inserted != null)
                 {
                     item.Property("InsertTime").CurrentValue = DateTime.Now;
                 }
@@ -77,17 +84,17 @@ namespace Persistence
                     item.Property("UpdateTime").CurrentValue = DateTime.Now;
                 }
 
-                if (item.State == EntityState.Deleted && RemoveTime != null && IsRemoved !=null)
+                if (item.State == EntityState.Deleted && RemoveTime != null && IsRemoved != null)
                 {
                     item.Property("RemoveTime").CurrentValue = DateTime.Now;
                     item.Property("IsRemoved").CurrentValue = true;
-                    item.State= EntityState.Modified;
-                }          
+                    item.State = EntityState.Modified;
+                }
             }
             return base.SaveChanges();
         }
     }
 }
 
-    
+
 

@@ -30,8 +30,8 @@ builder.Services.AddTransient<ICatalogItemEditDeleteGetListService, CatalogItemE
 #region connection String SqlServer
 
 builder.Services.AddScoped<IDataBaseContext, DataBaseContext>();
-//string connection = builder.Configuration["ConnectionString:SqlServer"];
-var connection= builder.Configuration["ConnectionString:SqlServer"];
+string connection = builder.Configuration["ConnectionString:SqlServer"];
+//var connection= builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
 
 #endregion

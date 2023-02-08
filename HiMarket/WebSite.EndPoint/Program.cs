@@ -42,6 +42,7 @@ builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
 
 
 #region Connection String
+
 builder.Services.AddTransient<IDataBaseContext, DataBaseContext>();
  
 string connection = builder.Configuration["ConnectionString:SqlServer"];

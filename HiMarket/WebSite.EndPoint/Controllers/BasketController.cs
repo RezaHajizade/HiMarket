@@ -32,6 +32,19 @@ namespace WebSite.EndPoint.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [HttpPost]
+        public IActionResult RemoveItemFromBasket(int itemId)
+        {
+            basketService.RemoveItemFromBasket(itemId);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult setQuantity(int basketItemId,int quantity)
+        {
+            return Json(basketService.SetQuantity(basketItemId, quantity)); 
+        }
+
         private BasketDto GetOrSetBasket()
         {
             if (signInManager.IsSignedIn(User))

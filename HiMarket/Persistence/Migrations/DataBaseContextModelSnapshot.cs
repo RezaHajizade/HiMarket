@@ -17,53 +17,23 @@ namespace Persistence.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Baskets.Bascket", b =>
+            modelBuilder.Entity("Domain.Baskets.BasketItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("BuyerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("InsertTime")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 462, DateTimeKind.Local).AddTicks(3052));
-
-                    b.Property<bool>("IsRemoved")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
-
-                    b.Property<DateTime?>("RemoveTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("UpdateTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("basckets");
-                });
-
-            modelBuilder.Entity("Domain.Baskets.BascketItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BascketId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("BasketsId")
                         .HasColumnType("int");
 
                     b.Property<int>("CatalogItemId")
@@ -72,7 +42,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 462, DateTimeKind.Local).AddTicks(5113));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(655));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -93,11 +63,44 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BascketId");
+                    b.HasIndex("BasketsId");
 
                     b.HasIndex("CatalogItemId");
 
-                    b.ToTable("BascketItems");
+                    b.ToTable("BasketItems");
+                });
+
+            modelBuilder.Entity("Domain.Baskets.Baskets", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("BuyerId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(3320));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Baskets");
                 });
 
             modelBuilder.Entity("Domain.Catalogs.CatalogBrand", b =>
@@ -106,7 +109,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Brand")
                         .IsRequired()
@@ -116,7 +119,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 462, DateTimeKind.Local).AddTicks(7333));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(5385));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -172,7 +175,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AvailableStock")
                         .HasColumnType("int");
@@ -189,7 +192,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 462, DateTimeKind.Local).AddTicks(9633));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(7772));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -229,7 +232,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CatalogItemId")
                         .HasColumnType("int");
@@ -241,7 +244,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 463, DateTimeKind.Local).AddTicks(2634));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(920));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -275,7 +278,7 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CatalogItemId")
                         .HasColumnType("int");
@@ -286,7 +289,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 463, DateTimeKind.Local).AddTicks(4624));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(3314));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -316,12 +319,12 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2022, 11, 19, 8, 52, 17, 463, DateTimeKind.Local).AddTicks(6764));
+                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(5926));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -380,13 +383,11 @@ namespace Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Domain.Baskets.BascketItem", b =>
+            modelBuilder.Entity("Domain.Baskets.BasketItem", b =>
                 {
-                    b.HasOne("Domain.Baskets.Bascket", null)
+                    b.HasOne("Domain.Baskets.Baskets", null)
                         .WithMany("Items")
-                        .HasForeignKey("BascketId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("BasketsId");
 
                     b.HasOne("Domain.Catalogs.CatalogItem", "CatalogItem")
                         .WithMany()
@@ -447,7 +448,7 @@ namespace Persistence.Migrations
                     b.Navigation("ParentCatalogType");
                 });
 
-            modelBuilder.Entity("Domain.Baskets.Bascket", b =>
+            modelBuilder.Entity("Domain.Baskets.Baskets", b =>
                 {
                     b.Navigation("Items");
                 });

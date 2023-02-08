@@ -40,7 +40,7 @@ namespace Persistence
                 .HasKey(p => new { p.UserId, p.LoginProvider, p.Name });
 
 
-            //base.OnModelCreating(builder);
+            base.OnModelCreating(builder);
         }
 
     }

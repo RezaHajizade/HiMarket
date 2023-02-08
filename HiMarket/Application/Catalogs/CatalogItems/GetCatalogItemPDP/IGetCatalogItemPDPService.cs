@@ -58,7 +58,6 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                     Price = p.Price
                 }).ToList();
 
-
             return new CatalogItemPDPDto
             {
                 Features = feature,
