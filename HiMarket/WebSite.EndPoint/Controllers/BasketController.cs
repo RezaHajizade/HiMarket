@@ -28,7 +28,7 @@ namespace WebSite.EndPoint.Controllers
         public IActionResult Index(int catalogItemId, int quantity = 1)
         {
             var basket = GetOrSetBasket();
-            basketService.AddItemToService(basket.Id, catalogItemId, quantity);
+            basketService.AddItemToBasket(basket.Id, catalogItemId, quantity);
             return RedirectToAction(nameof(Index));
         }
 
