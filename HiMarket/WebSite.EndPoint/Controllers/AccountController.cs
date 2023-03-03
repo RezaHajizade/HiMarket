@@ -1,4 +1,5 @@
-﻿using Application.Services.Email;
+﻿using Application.BasketService;
+using Application.Services.Email;
 using Domain.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,13 +15,17 @@ namespace WebSite.EndPoint.Controllers
     {
         protected readonly UserManager<User> _userManager;
         protected readonly SignInManager<User> _signInManager;
+        private readonly IBasketService basketService;
         protected readonly EmailServices _emailServices;
+
         public AccountController(UserManager<User> userManager,
             SignInManager<User> signInManager
+            ,IBasketService basketService
             )
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            this.basketService = basketService;
             _emailServices = new EmailServices();
         }
 
@@ -52,6 +57,10 @@ namespace WebSite.EndPoint.Controllers
             var result = _userManager.CreateAsync(newuser, register.Password).Result;
             if (result.Succeeded)
             {
+                var user=_userManager.FindByNameAsync(newuser.Email).Result;
+                TransferBasketForUser(user.Id);
+                _signInManager.SignInAsync(user, true).Wait();
+
                 var token = _userManager.GenerateEmailConfirmationTokenAsync(newuser).Result;
                 string callbackUrl = Url.Action("ConfirmEmail", "Account", new
                 {
@@ -213,6 +222,8 @@ namespace WebSite.EndPoint.Controllers
             var result = _signInManager.PasswordSignInAsync(user, login.Password, login.IsPersistent, true).Result;
             if (result.Succeeded)
             {
+                TransferBasketForUser(user.Id);
+
                 return Redirect(login.ReturnUrl);
             }
             if (result.RequiresTwoFactor)
@@ -227,6 +238,18 @@ namespace WebSite.EndPoint.Controllers
         {
             _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+
+        private void TransferBasketForUser(string userId)
+        {
+            string CookieName = "BasketId";
+            if(Request.Cookies.ContainsKey(CookieName))
+            {
+                var anonymousId = Request.Cookies[CookieName];
+                basketService.TransferBasket(anonymousId, userId);
+                Response.Cookies.Delete(CookieName);
+            }
         }
     }
 }

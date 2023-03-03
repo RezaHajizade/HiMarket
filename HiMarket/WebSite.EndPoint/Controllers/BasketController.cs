@@ -3,6 +3,7 @@ using Domain.Entity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.RegularExpressions;
+using WebSite.EndPoint.Utilities;
 
 namespace WebSite.EndPoint.Controllers
 {
@@ -49,7 +50,8 @@ namespace WebSite.EndPoint.Controllers
         {
             if (signInManager.IsSignedIn(User))
             {
-                return basketService.GetOrCreateBasketForUser(User.Identity.Name);
+                var userId=ClaimUtility.GetUserId(User);
+                return basketService.GetOrCreateBasketForUser(userId);
             }
             else
             {

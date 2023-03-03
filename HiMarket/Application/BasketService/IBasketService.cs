@@ -17,6 +17,8 @@ namespace Application.BasketService
         bool RemoveItemFromBasket(int ItemId);
         bool SetQuantity(int quantity, int itemId);
         BasketDto GetBasketForUser(string UserId);
+        void TransferBasket(string anonymousId, string UserId);
+
     }
     public class BasketService : IBasketService
     {
@@ -141,6 +143,30 @@ namespace Application.BasketService
                      .CatalogItemImages?.FirstOrDefault()?.Src ?? ""),
                 }).ToList(),
             };
+        }
+
+        public void TransferBasket(string anonymousId, string UserId)
+        {
+            var anonymousBasket = context.Baskets
+                .SingleOrDefault(p => p.BuyerId == anonymousId);
+
+            if(anonymousBasket==null) return;
+
+            var userBasket = context.Baskets.SingleOrDefault(p => p.BuyerId == UserId);
+            if (userBasket == null)
+            {
+                userBasket = new Baskets(UserId);
+                context.Baskets.Add(userBasket);
+            }
+
+            foreach(var item in anonymousBasket.Items)
+            {
+                userBasket.AddItem(item.UnitPrice,item.Quantity,item.CatalogItemId);
+            }
+
+            context.Baskets.Remove(anonymousBasket);
+
+            context.SaveChanges();
         }
     }
 
