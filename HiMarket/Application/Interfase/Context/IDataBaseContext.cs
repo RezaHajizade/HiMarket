@@ -1,6 +1,7 @@
 ﻿using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
+using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Application.Interfase.Context
          DbSet<CatalogItem> CatalogItems { get; set; }
         DbSet<Baskets> Baskets { get; set; }
         DbSet<BasketItem> BasketItems { get; set; }
+        DbSet<UserAddress> UserAddress { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

@@ -39,8 +39,9 @@ namespace Persistence
             builder.Entity<IdentityUserToken<string>>()
                 .HasKey(p => new { p.UserId, p.LoginProvider, p.Name });
 
+           
 
-            base.OnModelCreating(builder);
+         //   base.OnModelCreating(builder);
         }
 
     }

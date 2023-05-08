@@ -6,6 +6,7 @@ using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
 using Application.Services.Email;
+using Application.Users;
 using Application.Visitors.SaveVisitorInfo;
 using Application.Visitors.VisitorOnline;
 using Infrastructure.IdentityConfigs;
@@ -31,6 +32,7 @@ builder.Services.AddTransient<IUriComposerService, UriComposerService>();
 builder.Services.AddTransient<IGetCatalogItemPLPService, GetCatalogItemPLPService>();
 builder.Services.AddTransient<IGetCatalogItemPDPService, GetCatalogItemPDPService>();
 builder.Services.AddTransient<IBasketService, BasketService>();
+builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 
 
 builder.Services.AddScoped<SaveVisitorFilter>();
@@ -38,7 +40,7 @@ builder.Services.AddSignalR();
 
 //mapper
 builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
-
+builder.Services.AddAutoMapper(typeof(UserMappingProfile));
 
 
 #region Connection String
@@ -79,6 +81,11 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllerRoute(
+         name: "areas",
+         pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
 
 app.MapControllerRoute(
     name: "default",

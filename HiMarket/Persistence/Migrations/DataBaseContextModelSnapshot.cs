@@ -42,7 +42,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(655));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 187, DateTimeKind.Local).AddTicks(759));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -85,7 +85,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(3320));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 187, DateTimeKind.Local).AddTicks(4536));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -119,7 +119,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(5385));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 187, DateTimeKind.Local).AddTicks(6539));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -192,7 +192,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 11, DateTimeKind.Local).AddTicks(7772));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 187, DateTimeKind.Local).AddTicks(8948));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -244,7 +244,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(920));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 188, DateTimeKind.Local).AddTicks(2138));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -289,7 +289,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(3314));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 188, DateTimeKind.Local).AddTicks(4767));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -324,7 +324,7 @@ namespace Persistence.Migrations
                     b.Property<DateTime>("InsertTime")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2023, 1, 29, 12, 34, 29, 12, DateTimeKind.Local).AddTicks(5926));
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 188, DateTimeKind.Local).AddTicks(7194));
 
                     b.Property<bool>("IsRemoved")
                         .ValueGeneratedOnAdd()
@@ -381,6 +381,59 @@ namespace Persistence.Migrations
                             ParentCatalogTypeId = 2,
                             Type = "کیف و کاور گوشی"
                         });
+                });
+
+            modelBuilder.Entity("Domain.Users.UserAddress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("InsertTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2023, 5, 3, 10, 55, 32, 188, DateTimeKind.Local).AddTicks(9565));
+
+                    b.Property<bool>("IsRemoved")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("PostalAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReciverName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("RemoveTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ZipCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserAddress");
                 });
 
             modelBuilder.Entity("Domain.Baskets.BasketItem", b =>

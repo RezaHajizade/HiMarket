@@ -3,6 +3,7 @@ using Domain.Attributes;
 using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
+using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using Persistence.EntityConfigurations;
 using Persistence.Migrations;
@@ -27,6 +28,7 @@ namespace Persistence
         public DbSet<CatalogItem> CatalogItems { get; set; }
         public DbSet<Baskets> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
+        public DbSet<UserAddress> UserAddress { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

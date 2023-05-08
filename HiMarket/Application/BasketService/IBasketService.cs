@@ -148,7 +148,7 @@ namespace Application.BasketService
         public void TransferBasket(string anonymousId, string UserId)
         {
             var anonymousBasket = context.Baskets
-                .SingleOrDefault(p => p.BuyerId == anonymousId);
+                .FirstOrDefault(p => p.BuyerId == anonymousId);
 
             if(anonymousBasket==null) return;
 
