@@ -3,7 +3,9 @@ using Domain.Attributes;
 using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
+using Domain.Order;
 using Domain.Users;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Persistence.EntityConfigurations;
 using Persistence.Migrations;
@@ -29,6 +31,9 @@ namespace Persistence
         public DbSet<Baskets> Baskets { get; set; }
         public DbSet<BasketItem> BasketItems { get; set; }
         public DbSet<UserAddress> UserAddress { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -57,6 +62,10 @@ namespace Persistence
 
 
             DataBaseContextSeed.CatalogSeed(builder);
+
+
+            //تمام فیلد های  درون کلاس آدرس به عنوان یک فیلد درون تیبل اردرمون ذخیره بشوند و در واقع یک تیبل جدا برامون ایجاد نشه و ای اف هم بهمون خطا نمیده
+            builder.Entity<Order>().OwnsOne(p => p.Address);
             base.OnModelCreating(builder);
         }
         public override int SaveChanges()

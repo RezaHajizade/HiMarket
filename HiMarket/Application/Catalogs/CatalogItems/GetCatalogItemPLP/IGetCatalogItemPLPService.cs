@@ -1,6 +1,6 @@
-﻿using Application.Catalogs.CatalogItems.UriComposer;
-using Application.Dtos;
+﻿using Application.Dtos;
 using Application.Interfase.Context;
+using Application.UriComposer;
 using Commons;
 using Microsoft.EntityFrameworkCore;
 using System;

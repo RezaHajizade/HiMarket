@@ -1,11 +1,12 @@
 using Application.BasketService;
 using Application.Catalogs.CatalogItems.GetCatalogItemPDP;
 using Application.Catalogs.CatalogItems.GetCatalogItemPLP;
-using Application.Catalogs.CatalogItems.UriComposer;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
+using Application.Orders;
 using Application.Services.Email;
+using Application.UriComposer;
 using Application.Users;
 using Application.Visitors.SaveVisitorInfo;
 using Application.Visitors.VisitorOnline;
@@ -33,6 +34,7 @@ builder.Services.AddTransient<IGetCatalogItemPLPService, GetCatalogItemPLPServic
 builder.Services.AddTransient<IGetCatalogItemPDPService, GetCatalogItemPDPService>();
 builder.Services.AddTransient<IBasketService, BasketService>();
 builder.Services.AddTransient<IUserAddressService, UserAddressService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 
 
 builder.Services.AddScoped<SaveVisitorFilter>();

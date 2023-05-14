@@ -1,5 +1,5 @@
-﻿using Application.Catalogs.CatalogItems.UriComposer;
-using Application.Interfase.Context;
+﻿using Application.Interfase.Context;
+using Application.UriComposer;
 using Domain.Baskets;
 using Microsoft.EntityFrameworkCore;
 using System;

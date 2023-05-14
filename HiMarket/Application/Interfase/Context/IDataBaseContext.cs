@@ -1,6 +1,7 @@
 ﻿using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
+using Domain.Order;
 using Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -19,11 +20,12 @@ namespace Application.Interfase.Context
         DbSet<Baskets> Baskets { get; set; }
         DbSet<BasketItem> BasketItems { get; set; }
         DbSet<UserAddress> UserAddress { get; set; }
+        DbSet<Order> Orders { get; set; }
+         DbSet<OrderItem> OrderItems { get; set; }
+
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
-
-
     }
 }
