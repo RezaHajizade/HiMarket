@@ -17,9 +17,12 @@ namespace Application.Interfase.Context
          DbSet<CatalogBrand> CatalogBrands { get; set; }
          DbSet<CatalogType> CatalogTypes { get; set; }
          DbSet<CatalogItem> CatalogItems { get; set; }
+
         DbSet<Baskets> Baskets { get; set; }
         DbSet<BasketItem> BasketItems { get; set; }
+
         DbSet<UserAddress> UserAddress { get; set; }
+
         DbSet<Order> Orders { get; set; }
          DbSet<OrderItem> OrderItems { get; set; }
 

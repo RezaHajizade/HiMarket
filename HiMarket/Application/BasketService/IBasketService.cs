@@ -41,34 +41,6 @@ namespace Application.BasketService
             context.SaveChanges();
         }
 
-        public BasketDto CreateBasketForUser(string UserId)
-        {
-            var Basket = context.Baskets
-                .Include(p => p.Items)
-                .ThenInclude(p => p.CatalogItem)
-                .ThenInclude(p => p.CatalogItemImages)
-                .SingleOrDefault(b => b.BuyerId == UserId);
-
-            if (Basket == null)
-            {
-                return null;
-            }
-
-            return new BasketDto
-            {
-                BuyerId = Basket.BuyerId,
-                Id = Basket.Id,
-                basketItems = Basket.Items.Select(item => new BasketItemDto
-                {
-                    Id = item.Id,
-                    CatalogItemId = item.CatalogItemId,
-                    CatalogName = item.CatalogItem.Name,
-                    Quantity = item.Quantity,
-                    UnitPrice = item.UnitPrice,
-                    ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?.CatalogItemImages?.FirstOrDefault()?.Src ?? "")
-                }).ToList(),
-            };
-        }
 
         public BasketDto GetOrCreateBasketForUser(string BuyerId)
         {
@@ -76,12 +48,12 @@ namespace Application.BasketService
                 .Include(p => p.Items)
                 .ThenInclude(p => p.CatalogItem)
                 .ThenInclude(p => p.CatalogItemImages)
-                .FirstOrDefault(p => p.BuyerId == BuyerId);
+                .SingleOrDefault(p => p.BuyerId == BuyerId);
 
             if (Basket == null)
             {
                 //create basket of buy
-                return GetOrCreateBasketForUser(BuyerId);
+                return CreateBasketForUser(BuyerId);
             }
 
             return new BasketDto
@@ -115,32 +87,43 @@ namespace Application.BasketService
             context.SaveChanges();
             return true;
         }
+        public BasketDto CreateBasketForUser(string BuyerId)
+        {
+            Baskets baskets = new Baskets(BuyerId);
+            context.Baskets.Add(baskets);
+            context.SaveChanges();
+            return new BasketDto
+            {
+                BuyerId = BuyerId,
+                Id = baskets.Id
+            };
+        }
 
         public BasketDto GetBasketForUser(string UserId)
         {
             var basket = context.Baskets
-                .Include(p => p.Items)
-                .ThenInclude(p => p.CatalogItem)
-                .ThenInclude(p => p.CatalogItemImages)
-                .FirstOrDefault(p => p.BuyerId == UserId);
-
-            if(basket == null)
+              .Include(p => p.Items)
+              .ThenInclude(p => p.CatalogItem)
+              .ThenInclude(p => p.CatalogItemImages)
+              .SingleOrDefault(p => p.BuyerId == UserId);
+            if (basket == null)
             {
                 return null;
             }
-
             return new BasketDto
             {
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
                 basketItems = basket.Items.Select(item => new BasketItemDto
                 {
-                    CatalogItemId = item.Id,
+                    CatalogItemId = item.CatalogItemId,
+                    Id = item.Id,
                     CatalogName = item.CatalogItem.Name,
-                    UnitPrice = item.UnitPrice,
                     Quantity = item.Quantity,
+                    UnitPrice = item.UnitPrice,
                     ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?
                      .CatalogItemImages?.FirstOrDefault()?.Src ?? ""),
+
                 }).ToList(),
             };
         }
@@ -150,7 +133,7 @@ namespace Application.BasketService
             var anonymousBasket = context.Baskets
                 .FirstOrDefault(p => p.BuyerId == anonymousId);
 
-            if(anonymousBasket==null) return;
+            if (anonymousBasket == null) return;
 
             var userBasket = context.Baskets.SingleOrDefault(p => p.BuyerId == UserId);
             if (userBasket == null)
@@ -159,9 +142,9 @@ namespace Application.BasketService
                 context.Baskets.Add(userBasket);
             }
 
-            foreach(var item in anonymousBasket.Items)
+            foreach (var item in anonymousBasket.Items)
             {
-                userBasket.AddItem(item.UnitPrice,item.Quantity,item.CatalogItemId);
+                userBasket.AddItem(item.UnitPrice, item.Quantity, item.CatalogItemId);
             }
 
             context.Baskets.Remove(anonymousBasket);
@@ -177,7 +160,7 @@ namespace Application.BasketService
         public List<BasketItemDto> basketItems { get; set; } = new List<BasketItemDto>();
         public int Total()
         {
-            if(basketItems.Count>0)
+            if (basketItems.Count > 0)
             {
                 return basketItems.Sum(p => p.UnitPrice * p.Quantity);
             }

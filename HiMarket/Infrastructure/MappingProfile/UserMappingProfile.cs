@@ -1,7 +1,9 @@
 ﻿using Application.Users;
 using AutoMapper;
 using Domain.Entity;
+using Domain.Order;
 using Domain.Users;
+using Persistence.Migrations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +16,9 @@ namespace Infrastructure.MappingProfile
     {
         public UserMappingProfile() 
         {
-            CreateMap<UserAddress,UserAddressDto>().ReverseMap();
-            CreateMap<AddUserAddressDto, UserAddress>().ReverseMap(); 
-            CreateMap<User,UserAddress> ().ReverseMap();
+            CreateMap<UserAddress, UserAddressDto>();
+            CreateMap<AddUserAddressDto, UserAddress>();
+            CreateMap<UserAddress, Address>();
         }
     }
 }

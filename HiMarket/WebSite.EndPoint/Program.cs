@@ -35,6 +35,7 @@ builder.Services.AddTransient<IGetCatalogItemPDPService, GetCatalogItemPDPServic
 builder.Services.AddTransient<IBasketService, BasketService>();
 builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 
 
 builder.Services.AddScoped<SaveVisitorFilter>();
