@@ -580,6 +580,10 @@
               "target": "Package",
               "version": "[7.0.6, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -587,6 +591,10 @@
             "UAParser": {
               "target": "Package",
               "version": "[3.1.47, )"
+            },
+            "Zarinpal": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             },
             "xunit.extensibility.core": {
               "target": "Package",

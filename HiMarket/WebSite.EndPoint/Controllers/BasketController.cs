@@ -1,5 +1,6 @@
 ﻿using Application.BasketService;
 using Application.Orders;
+using Application.Payments;
 using Application.Users;
 using Domain.Entity;
 using Domain.Order;
@@ -20,17 +21,20 @@ namespace WebSite.EndPoint.Controllers
         private readonly SignInManager<User> signInManager;
         private readonly IUserAddressService userAddressService;
         private readonly IOrderService orderService;
-        private string UserId = null;
+        private readonly IPaymentService paymentService;
+        private string userId = null;
 
         public BasketController(IBasketService basketService,
             SignInManager<User> signInManager,
             IUserAddressService userAddressService,
-            IOrderService orderService)
+            IOrderService orderService,
+            IPaymentService paymentService)
         {
             this.basketService = basketService;
             this.signInManager = signInManager;
             this.userAddressService = userAddressService;
             this.orderService = orderService;
+            this.paymentService = paymentService;
         }
 
         [AllowAnonymous]
@@ -80,29 +84,32 @@ namespace WebSite.EndPoint.Controllers
 
             if(PaymentMethod==PaymentMethod.OnlinePayment)
             {
-                //ثبت پرداخت
+                //Registration Orders
+                var Payment =paymentService.PaymentForOrder(OrderId);
 
-                //ارسال به درگاه پرداخت
+                //Send to payment gateway
+                return RedirectToAction("Index", "Pay", new { PaymentId = Payment.PaymentId });
             }
             else
             {
-                //برو به صفحه سفارشات من
+                //Go to my orders page
                 return RedirectToAction("Index", "Orders", new { area = "Customers" });
             }
 
-            return View();
         }
+       
+        
         private BasketDto GetOrSetBasket()
         {
             if (signInManager.IsSignedIn(User))
             {
-                var userId=ClaimUtility.GetUserId(User);
+                 userId=ClaimUtility.GetUserId(User);
                 return basketService.GetOrCreateBasketForUser(userId);
             }
             else
             {
                 SetCookiesForBasket();
-                return basketService.GetOrCreateBasketForUser(UserId);
+                return basketService.GetOrCreateBasketForUser(userId);
             }
         }
         private void SetCookiesForBasket()
@@ -110,13 +117,13 @@ namespace WebSite.EndPoint.Controllers
             string basketCookieName = "BasketId";
             if (Request.Cookies.ContainsKey(basketCookieName))
             {
-                UserId = Request.Cookies[basketCookieName];
+                userId = Request.Cookies[basketCookieName];
             }
-            if (UserId != null) return;
-            UserId = Guid.NewGuid().ToString();
+            if (userId != null) return;
+            userId = Guid.NewGuid().ToString();
             var cookieOption = new CookieOptions { IsEssential = true };
             cookieOption.Expires = DateTime.Now.AddYears(1);
-            Response.Cookies.Append(basketCookieName, UserId, cookieOption);
+            Response.Cookies.Append(basketCookieName, userId, cookieOption);
 
         }
 

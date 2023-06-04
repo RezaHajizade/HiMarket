@@ -4,6 +4,7 @@ using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Entity;
 using Domain.Order;
+using Domain.Payments;
 using Domain.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,7 @@ namespace Persistence
         public DbSet<UserAddress> UserAddress { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        
+        public DbSet<payment> Payments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

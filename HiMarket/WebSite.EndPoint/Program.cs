@@ -5,6 +5,7 @@ using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
 using Application.Orders;
+using Application.Payments;
 using Application.Services.Email;
 using Application.UriComposer;
 using Application.Users;
@@ -35,6 +36,7 @@ builder.Services.AddTransient<IGetCatalogItemPDPService, GetCatalogItemPDPServic
 builder.Services.AddTransient<IBasketService, BasketService>();
 builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
+builder.Services.AddTransient<IPaymentService, PaymentService>();
 builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 
 
@@ -49,6 +51,7 @@ builder.Services.AddAutoMapper(typeof(UserMappingProfile));
 #region Connection String
 
 builder.Services.AddTransient<IDataBaseContext, DataBaseContext>();
+builder.Services.AddTransient<IIdentityDataBaseContext, IdentityDataBaseContext>();
  
 string connection = builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));

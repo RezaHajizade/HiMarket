@@ -617,3 +617,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net7.0\
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net7.0\WebSite.EndPoint.pdb
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net7.0\WebSite.EndPoint.genruntimeconfig.cache
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\obj\Debug\net7.0\ref\WebSite.EndPoint.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net7.0\Dto.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net7.0\Service.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\WebSite.EndPoint\bin\Debug\net7.0\ZarinPal.dll
