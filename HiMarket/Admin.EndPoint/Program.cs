@@ -3,6 +3,7 @@ using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.CrudService.CatalogItems;
+using Application.Discounts.AddNewDiscountService;
 using Application.Interfase.Context;
 using Application.Visitors.GetTodayReport;
 using FluentValidation;
@@ -11,6 +12,7 @@ using Infrastructure.ExternalApi.ImageServer;
 using Infrastructure.MappingProfile;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Persistence;
 using Persistence.MongoContext;
 
@@ -25,6 +27,7 @@ builder.Services.AddTransient<IAddNewCatalogItemService, AddNewCatalogItemServic
 builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
 builder.Services.AddTransient<ICatalogItemEditDeleteGetListService, CatalogItemEditDeleteGetListService>();
+builder.Services.AddTransient<IAddNewDiscountService, AddNewDiscountService>();
 
 
 #region connection String SqlServer

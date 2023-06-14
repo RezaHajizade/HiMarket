@@ -1,5 +1,6 @@
 ﻿using Domain.Baskets;
 using Domain.Catalogs;
+using Domain.Discounts;
 using Domain.Entity;
 using Domain.Order;
 using Domain.Payments;
@@ -24,6 +25,7 @@ namespace Application.Interfase.Context
          DbSet<Order> Orders { get; set; }
          DbSet<OrderItem> OrderItems { get; set; }
          DbSet<payment> Payments { get; set; }
+        DbSet<Discount> Discounts { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

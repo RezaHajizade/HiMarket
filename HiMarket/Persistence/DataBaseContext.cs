@@ -2,6 +2,7 @@
 using Domain.Attributes;
 using Domain.Baskets;
 using Domain.Catalogs;
+using Domain.Discounts;
 using Domain.Entity;
 using Domain.Order;
 using Domain.Payments;
@@ -35,7 +36,7 @@ namespace Persistence
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<payment> Payments { get; set; }
-
+        public DbSet<Discount> Discounts  { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())
