@@ -36,6 +36,37 @@ namespace Domain.Order
              
         }
 
+        /// <summary>
+        /// Payment is done
+        /// </summary>
+        public void PaymentDone()
+        {
+            PaymentStatus = PaymentStatus.Paid;
+        }
+
+        /// <summary>
+        /// The goods were delivered
+        /// </summary>
+        public void OrderDelivered()
+        {
+            OrderStatus = OrderStatus.Delivered;
+        }
+
+        /// <summary>
+        /// Product return registration
+        /// </summary>
+        public void OrderReturned()
+        {
+            OrderStatus=OrderStatus.Returned;
+        }
+
+        /// <summary>
+        /// Cancel the order
+        /// </summary>        
+        public void OrderCancelled()
+        {
+            OrderStatus = OrderStatus.Cancelled;
+        }
         public int TotalPrice()
         {
             return _orderItems.Sum(p => p.UnitPrice * p.Units);
@@ -88,50 +119,50 @@ namespace Domain.Order
     public enum PaymentMethod
     {
         /// <summary>
-        /// پرداخت آنلاین
+        /// online payment
         /// </summary>
-        OnlinePayment=0,
+        OnlinePayment = 0,
 
         ///<summary>
-        ///پرداخت در محل
+        ///Payment on the spot
         /// </summary>
-        PaymentOnTheSpot=1,
+        PaymentOnTheSpot = 1,
     }
 
     public enum PaymentStatus
     {
         ///<summary>
-        ///منتظر پرداخت
+        ///Awaiting payment
         /// </summary>
-        WaitingForPayment=0,
-        
+        WaitingForPayment = 0,
+
         ///<summary>
-        ///پرداخت انجام شد
+        ///Payment is done
         /// </summary>
-        Paid=1,
+        Paid = 1,
     }
 
     public enum OrderStatus
     {
         ///<summary>
-        ///در حال پردازش
+        ///Processing
         /// </summary>
-        Processing=0,
-        
-        ///<summary>
-        ///تحویل داده شد
-        /// </summary>
-        Delivered=1,
+        Processing = 0,
 
         ///<summary>
-        ///مرجوعی
+        ///delivered
         /// </summary>
-        Returned=2,
+        Delivered = 1,
 
         ///<summary>
-        ///لغو شد
+        ///returned
         /// </summary>
-        Cancelled=3,
+        Returned = 2,
+
+        ///<summary>
+        ///Cancelled
+        /// </summary>
+        Cancelled = 3,
     }
 
 }

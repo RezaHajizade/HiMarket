@@ -1,6 +1,9 @@
 ﻿using Application.Payments;
+using Domain.Payments;
 using Dto.Payment;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using RestSharp;
 using System.Security.Authentication;
 using WebSite.EndPoint.Utilities;
 using ZarinPal.Class;
@@ -16,7 +19,7 @@ namespace WebSite.EndPoint.Controllers
         private readonly IPaymentService paymentService;
         private readonly string merchendId;
 
-        public PayController(IConfiguration configuration,IPaymentService paymentService)
+        public PayController(IConfiguration configuration, IPaymentService paymentService)
         {
             this.configuration = configuration;
             this.paymentService = paymentService;
@@ -26,25 +29,25 @@ namespace WebSite.EndPoint.Controllers
             var expose = new Expose();
             _payment = expose.CreatePayment();
             _authority = expose.CreateAuthority();
-            _transactions = expose.CreateTransactions();         
+            _transactions = expose.CreateTransactions();
         }
 
         public async Task<IActionResult> Index(Guid paymentId)
         {
-            var payment=paymentService.GetPayment(paymentId);
-            if(payment == null)
+            var payment = paymentService.GetPayment(paymentId);
+            if (payment == null)
             {
                 return NotFound();
             }
 
             var userId = ClaimUtility.GetUserId(User);
 
-            if(userId != payment.UserId)
+            if (userId != payment.UserId)
             {
                 return BadRequest();
             }
 
-            string callBackUrl=Url.Action(nameof(Verify),"Pay",new {paymentId},protocol:Request.Scheme);
+            string callBackUrl = Url.Action(nameof(Verify), "Pay", new { paymentId }, protocol: Request.Scheme);
 
             var resultZarinpalRequest = await _payment.Request(new DtoRequest()
             {
@@ -54,14 +57,72 @@ namespace WebSite.EndPoint.Controllers
                 MerchantId = merchendId,
                 Mobile = payment.PhoneNumber,
                 CallbackUrl = callBackUrl
-            },Payment.Mode.zarinpal
+            }, Payment.Mode.zarinpal
             );
             return Redirect($"https://zarinpal.com/pg/StartPay/{resultZarinpalRequest.Authority}");
         }
 
-        public IActionResult Verify()
+        public IActionResult Verify(Guid Id, string Authority)
         {
-            return View();
+            string Status = HttpContext.Request.Query["Status"];
+
+            if (Status != "" && Status.ToString().ToLower() == "ok"
+                && Authority != "")
+            {
+                var Payment = paymentService.GetPayment(Id);
+                if (Payment == null)
+                {
+                    return NotFound();
+                }
+
+                //var Verification = _payment.Verification(new DtoVerification
+                //{
+                //    Amount = Payment.Amount,
+                //    Authority = Authority,
+                //    MerchantId = merchendId
+                //}, ZarinPal.Class.Payment.Mode.zarinpal).Result;
+
+                var client = new RestClient("https://www.zarinpal.com/pg/rest/webGate/PaymentVerification.json");
+                client.Timeout = -1;
+                var request = new RestRequest(Method.POST);
+                request.AddHeader("Content-Type", "application/json");
+                request.AddParameter("application/json", $"{{\"MerchantID\" :\"{merchendId}\",\"Authority\":\"{Authority}\",\"Amount\":\"{Payment.Amount}\"}}", ParameterType.RequestBody);
+                var response = client.Execute(request);
+
+                VerificationPayResultDto verification =
+                    JsonConvert.DeserializeObject<VerificationPayResultDto>(response.Content);
+
+                if (verification.Status == 100)
+                {
+                    bool verifyResult = paymentService.VerifyPayment(Id, Authority, verification.RefID);
+
+                    if (verifyResult)
+                    {
+                        return Redirect("/customers/orders");
+                    }
+                    else
+                    {
+                        TempData["message"] = "پرداخت انجام شد اما ثبت نشد!";
+                        return RedirectToAction("checkout", "basket");
+                    }
+                }
+                else
+                {
+                    TempData["message"] = "پرداخت شما ناموفق بوده است . لطفا مجددا تلاش نمایید یا در صورت بروز مشکل با مدیریت سایت تماس بگیرید .";
+                    return RedirectToAction("checkout", "basket");
+                }
+            }
+
+            TempData["message"] = "پرداخت شما ناموفق بوده است .";
+            return RedirectToAction("checkout", "basket");
+
         }
+
     }
+    public class VerificationPayResultDto
+    {
+        public int Status { get; set; }
+        public long RefID { get; set; }
+    }
+
 }

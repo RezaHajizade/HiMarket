@@ -14,6 +14,8 @@ namespace Application.Payments
     {
         PaymentOfOrderDto PaymentForOrder(int OrderId);
         PaymentDto GetPayment(Guid Id);
+        bool VerifyPayment(Guid Id, string Authority, long RefId);
+
     }
 
     public class PaymentService : IPaymentService
@@ -88,7 +90,8 @@ namespace Application.Payments
             if (payment == null)
                 throw new Exception("payment not found");
 
-            payment.PaymentIsDone(Authority, RefId);
+            payment.Order.PaymentDone();
+            payment.PaymentIsDone(Authority,RefId);
 
             context.SaveChanges();
             return true;

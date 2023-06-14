@@ -40,7 +40,7 @@ namespace WebSite.EndPoint.Controllers
         [AllowAnonymous]
         public IActionResult Index()
         {
-            var data=GetOrSetBasket();
+            var data = GetOrSetBasket();
             return View(data);
         }
 
@@ -61,31 +61,31 @@ namespace WebSite.EndPoint.Controllers
         }
         [AllowAnonymous]
         [HttpPost]
-        public IActionResult setQuantity(int basketItemId,int quantity)
+        public IActionResult setQuantity(int basketItemId, int quantity)
         {
-            return Json(basketService.SetQuantity(basketItemId, quantity)); 
+            return Json(basketService.SetQuantity(basketItemId, quantity));
         }
 
         public IActionResult ShippingPayment()
         {
             ShippingPaymentVIewModel model = new ShippingPaymentVIewModel();
             string userId = ClaimUtility.GetUserId(User);
-            model.Basket=basketService.GetBasketForUser(userId);
-            model.UserAddresses = userAddressService.GetAddress(userId);   
+            model.Basket = basketService.GetBasketForUser(userId);
+            model.UserAddresses = userAddressService.GetAddress(userId);
             return View(model);
         }
 
         [HttpPost]
         public IActionResult ShippingPayment(int Address, PaymentMethod PaymentMethod)
         {
-            string UserId=ClaimUtility.GetUserId(User);
+            string UserId = ClaimUtility.GetUserId(User);
             var Basket = basketService.GetBasketForUser(UserId);
-            var OrderId=orderService.CreateOrder(Basket.Id,Address,PaymentMethod);
+            var OrderId = orderService.CreateOrder(Basket.Id, Address, PaymentMethod);
 
-            if(PaymentMethod==PaymentMethod.OnlinePayment)
+            if (PaymentMethod == PaymentMethod.OnlinePayment)
             {
                 //Registration Orders
-                var Payment =paymentService.PaymentForOrder(OrderId);
+                var Payment = paymentService.PaymentForOrder(OrderId);
 
                 //Send to payment gateway
                 return RedirectToAction("Index", "Pay", new { PaymentId = Payment.PaymentId });
@@ -97,13 +97,17 @@ namespace WebSite.EndPoint.Controllers
             }
 
         }
-       
-        
+
+        public IActionResult Checkout()
+        {
+            return View();
+        }
+
         private BasketDto GetOrSetBasket()
         {
             if (signInManager.IsSignedIn(User))
             {
-                 userId=ClaimUtility.GetUserId(User);
+                userId = ClaimUtility.GetUserId(User);
                 return basketService.GetOrCreateBasketForUser(userId);
             }
             else
