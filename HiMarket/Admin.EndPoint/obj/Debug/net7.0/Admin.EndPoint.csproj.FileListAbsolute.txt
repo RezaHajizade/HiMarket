@@ -112,3 +112,4 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\obj\Debug\net7.0\re
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\obj\Debug\net7.0\Admin.EndPoint.pdb
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\obj\Debug\net7.0\Admin.EndPoint.genruntimeconfig.cache
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\obj\Debug\net7.0\ref\Admin.EndPoint.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\libman.json

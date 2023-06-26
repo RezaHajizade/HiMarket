@@ -11,10 +11,11 @@ using System.Xml.Linq;
 
 namespace Application.Discounts.AddNewDiscountService
 {
-    public  interface IAddNewDiscountService
+    public interface IAddNewDiscountService
     {
         void Execute(AddNewDiscountDto discount);
     }
+
 
     public class AddNewDiscountService : IAddNewDiscountService
     {
@@ -26,27 +27,28 @@ namespace Application.Discounts.AddNewDiscountService
         }
         public void Execute(AddNewDiscountDto discount)
         {
-
             var newdiscount = new Discount()
             {
                 Name = discount.Name,
                 CouponCode = discount.CouponCode,
                 DiscountAmount = discount.DiscountAmount,
-                DiscountPercentage = discount.DiscountPercentage,
-                StartDate = discount.StartDate,
-                EndDate = discount.EndDate,
                 DiscountLimitationId = discount.DiscountLimitationId,
+                DiscountPercentage = discount.DiscountPercentage,
                 DiscountTypeId = discount.DiscountTypeId,
+                EndDate = discount.EndDate,
+                RequiresCouponCode = discount.RequiresCouponCode,
+                StartDate = discount.StartDate,
+                UsePercentage = discount.UsePercentage,
             };
 
-            if(discount.appliedToCatalogItem!=null)
+            if (discount.appliedToCatalogItem != null)
             {
                 var catalogItems = context.CatalogItems.Where(p => discount.appliedToCatalogItem.Contains(p.Id)).ToList();
-                newdiscount.CatalogItems = catalogItems;            
+                newdiscount.CatalogItems = catalogItems;
             }
+
             context.Discounts.Add(newdiscount);
             context.SaveChanges();
-
         }
     }
 
@@ -75,7 +77,9 @@ namespace Application.Discounts.AddNewDiscountService
 
         [Display(Name = "تعداد کد تخفیف")]
         public int LimitationTimes { get; set; } = 0;
-        [Display(Name = "آعمال برای محصول")]
+        [Display(Name = "اعمال برای محصول")]
         public List<int> appliedToCatalogItem { get; set; }
+
+
     }
 }

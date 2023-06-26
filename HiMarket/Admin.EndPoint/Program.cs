@@ -3,6 +3,7 @@ using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.CrudService.CatalogItems;
+using Application.Discounts;
 using Application.Discounts.AddNewDiscountService;
 using Application.Interfase.Context;
 using Application.Visitors.GetTodayReport;
@@ -20,6 +21,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddControllers();
+
 builder.Services.AddScoped<IGetTodayReportService, GetTodayReportService>();
 builder.Services.AddTransient(typeof(IMongoDbContext<>), typeof(MongoDbContext<>));
 builder.Services.AddTransient<ICatalogTypeService, CatalogTypeService>();
@@ -28,6 +31,7 @@ builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
 builder.Services.AddTransient<ICatalogItemEditDeleteGetListService, CatalogItemEditDeleteGetListService>();
 builder.Services.AddTransient<IAddNewDiscountService, AddNewDiscountService>();
+builder.Services.AddTransient<IDiscountService, DiscountService>();
 
 
 #region connection String SqlServer
@@ -67,5 +71,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapControllers();
 
 app.Run();
