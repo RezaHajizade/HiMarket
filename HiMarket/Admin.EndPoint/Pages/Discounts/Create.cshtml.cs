@@ -13,10 +13,12 @@ namespace Admin.EndPoint.Pages.Discounts
         {
             this.addNewDiscountService = addNewDiscountService;
         }
+
+        [BindProperty]
         public AddNewDiscountDto model { get; set; }
+
         public void OnGet()
         {
-
         }
 
         public void OnPost()

@@ -37,6 +37,7 @@ namespace Persistence
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<payment> Payments { get; set; }
         public DbSet<Discount> Discounts  { get; set; }
+        public DbSet<CatalogItemFavourite> catalogItemFavourites  { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())

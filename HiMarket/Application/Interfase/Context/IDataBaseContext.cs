@@ -16,16 +16,17 @@ namespace Application.Interfase.Context
 {
     public interface IDataBaseContext
     {
-         DbSet<CatalogBrand> CatalogBrands { get; set; }
-         DbSet<CatalogType> CatalogTypes { get; set; }
-         DbSet<CatalogItem> CatalogItems { get; set; }
-         DbSet<Baskets> Baskets { get; set; }
-         DbSet<BasketItem> BasketItems { get; set; }
-         DbSet<UserAddress> UserAddress { get; set; }
-         DbSet<Order> Orders { get; set; }
-         DbSet<OrderItem> OrderItems { get; set; }
-         DbSet<payment> Payments { get; set; }
+        DbSet<CatalogBrand> CatalogBrands { get; set; }
+        DbSet<CatalogType> CatalogTypes { get; set; }
+        DbSet<CatalogItem> CatalogItems { get; set; }
+        DbSet<Baskets> Baskets { get; set; }
+        DbSet<BasketItem> BasketItems { get; set; }
+        DbSet<UserAddress> UserAddress { get; set; }
+        DbSet<Order> Orders { get; set; }
+        DbSet<OrderItem> OrderItems { get; set; }
+        DbSet<payment> Payments { get; set; }
         DbSet<Discount> Discounts { get; set; }
+        DbSet<CatalogItemFavourite> catalogItemFavourites { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

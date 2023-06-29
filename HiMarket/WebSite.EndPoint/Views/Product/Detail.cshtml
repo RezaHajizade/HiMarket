@@ -773,7 +773,10 @@
 
 
                                 <div class="product-card-actions">
-                                    <button class="add-to-wishlist"><i class="fas fa-heart"></i></button>
+                                    <a asp-area="Customers"
+                                   asp-controller="MyFavourite"
+                                   asp-action="AddToMyFavourite"
+                                   asp-route-CatalogsItemId="@item.Id" class="add-to-wishlist"><i class="fas fa-heart"></i></a>
                                     <button class="add-to-compare"><i class="fas fa-random"></i></button>
                                 </div>
                             </div>

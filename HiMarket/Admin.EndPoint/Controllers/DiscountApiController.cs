@@ -10,10 +10,11 @@ namespace Admin.EndPoint.Controllers
     {
         private readonly IDiscountService discountService;
 
-        public DiscountApiController(IDiscountService discountService) 
+        public DiscountApiController(IDiscountService discountService)
         {
             this.discountService = discountService;
         }
+
 
         [HttpGet]
         [Route("SearchCatalogItem")]
@@ -21,6 +22,5 @@ namespace Admin.EndPoint.Controllers
         {
             return Ok(discountService.GetCatalogItems(term));
         }
-
     }
 }

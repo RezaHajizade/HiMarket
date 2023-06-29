@@ -1,4 +1,5 @@
 using Application.BasketService;
+using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogItems.GetCatalogItemPDP;
 using Application.Catalogs.CatalogItems.GetCatalogItemPLP;
 using Application.Catalogs.CatalogTypes;
@@ -37,7 +38,7 @@ builder.Services.AddTransient<IBasketService, BasketService>();
 builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IPaymentService, PaymentService>();
-builder.Services.AddTransient<IUserAddressService, UserAddressService>();
+builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 
 
 builder.Services.AddScoped<SaveVisitorFilter>();
