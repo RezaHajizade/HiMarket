@@ -22,7 +22,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
         private readonly IMapper mapper;
         private readonly IUriComposerService uriComposer;
 
-        public GetCatalogItemPDPService(IDataBaseContext context,IMapper mapper, IUriComposerService uriComposer)
+        public GetCatalogItemPDPService(IDataBaseContext context, IMapper mapper, IUriComposerService uriComposer)
         {
             this.context = context;
             this.mapper = mapper;
@@ -34,8 +34,10 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                  .Include(p => p.CatalogItemFeatures)
                  .Include(p => p.CatalogItemImages)
                  .Include(p => p.CatalogType)
-                 .Include(p=>p.CatalogBrand)
+                 .Include(p => p.CatalogBrand)
                  .SingleOrDefault(p => p.Id == id);
+            catalogitem.VisitCount += 1;
+            context.SaveChanges();
 
             var feature = catalogitem.CatalogItemFeatures
                 .Select(p => new PDPFeaturesDto
@@ -44,7 +46,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                     Key = p.Key,
                     Value = p.Value
                 }).ToList()
-                .GroupBy(p=>p.Group);
+                .GroupBy(p => p.Group);
 
             var similarCatalogItem = context.CatalogItems
                 .Include(p => p.CatalogItemImages)
@@ -53,7 +55,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                 .Select(p => new SimilarCatalogItemDto
                 {
                     Id = p.Id,
-                    Images =uriComposer.ComposeImageUri(catalogitem.CatalogItemImages.FirstOrDefault().Src),
+                    Images = uriComposer.ComposeImageUri(catalogitem.CatalogItemImages.FirstOrDefault().Src),
                     Name = p.Name,
                     Price = p.Price
                 }).ToList();
@@ -70,7 +72,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                 Type = catalogitem.CatalogType.Type,
                 Image = catalogitem.CatalogItemImages.Select(p => uriComposer.ComposeImageUri(p.Src)).ToList(),
             };
-          
+
         }
     }
     public class CatalogItemPDPDto
@@ -81,7 +83,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
         public string Type { get; set; }
         public int Price { get; set; }
         public List<string> Image { get; set; }
-        public string Description  { get; set; }
+        public string Description { get; set; }
         public IEnumerable<IGrouping<string, PDPFeaturesDto>> Features { get; set; }
         public List<SimilarCatalogItemDto> SimilarCatalogs { get; set; }
 

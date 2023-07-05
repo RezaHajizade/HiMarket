@@ -1,4 +1,5 @@
 ﻿using Domain.Attributes;
+using Domain.Catalogs;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
@@ -76,6 +77,7 @@ namespace Domain.Order
     public class OrderItem
     {
         public int Id { get; set; }
+        public CatalogItem catalogItem { get; set; }
         public int CatalogItemId { get;private set; }
         public string ProductName { get; private set; }
         public string PictureUri { get; private set; }

@@ -1,5 +1,6 @@
 ﻿using Domain.Attributes;
 using Domain.Discounts;
+using Domain.Order;
 
 namespace Domain.Catalogs
 {
@@ -17,11 +18,13 @@ namespace Domain.Catalogs
         public int AvailableStock { get; set; }
         public int RestockThreshold { get; set; }
         public int MaxStockThreshold { get; set; }
+        public int VisitCount { get;set; }
 
         public ICollection<CatalogItemFeature>? CatalogItemFeatures { get; set; }
         public ICollection<CatalogItemImage>? CatalogItemImages { get; set; }
         public ICollection<Discount> Discounts { get; set; }
         public ICollection<CatalogItemFavourite> CatalogItemFavourite { get; set; }
+        public ICollection<OrderItem>orderItems { get; set; }
 
     }
 }
