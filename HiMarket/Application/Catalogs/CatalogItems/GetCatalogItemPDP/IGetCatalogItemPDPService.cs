@@ -71,6 +71,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
                 Price = catalogitem.Price,
                 Type = catalogitem.CatalogType.Type,
                 Image = catalogitem.CatalogItemImages.Select(p => uriComposer.ComposeImageUri(p.Src)).ToList(),
+                AvailableStock=catalogitem.AvailableStock
             };
 
         }
@@ -86,6 +87,8 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
         public string Description { get; set; }
         public IEnumerable<IGrouping<string, PDPFeaturesDto>> Features { get; set; }
         public List<SimilarCatalogItemDto> SimilarCatalogs { get; set; }
+
+        public int AvailableStock { get;set; }
 
     }
 
