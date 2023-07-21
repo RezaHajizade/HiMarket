@@ -6,6 +6,7 @@ using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
 using Application.Interfase.Context;
 using Application.Orders;
+using Application.Orders.CustomerOrderService;
 using Application.Payments;
 using Application.Services.Email;
 using Application.UriComposer;
@@ -39,6 +40,7 @@ builder.Services.AddTransient<IUserAddressService, UserAddressService>();
 builder.Services.AddTransient<IOrderService, OrderService>();
 builder.Services.AddTransient<IPaymentService, PaymentService>();
 builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
+builder.Services.AddTransient<ICustomerOrderService, CustomerOrderService>();
 
 
 builder.Services.AddScoped<SaveVisitorFilter>();
