@@ -1,5 +1,6 @@
 ﻿using Application.Interfase.Context;
 using Domain.Attributes;
+using Domain.Banners;
 using Domain.Baskets;
 using Domain.Catalogs;
 using Domain.Discounts;
@@ -38,6 +39,7 @@ namespace Persistence
         public DbSet<payment> Payments { get; set; }
         public DbSet<Discount> Discounts  { get; set; }
         public DbSet<CatalogItemFavourite> catalogItemFavourites  { get; set; }
+        public DbSet<Banner> Banners { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())

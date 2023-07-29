@@ -1,4 +1,5 @@
 using Admin.EndPoint.MappingProfiles;
+using Application.Banners;
 using Application.Catalogs.CatalogItems.AddNewCatalogItem;
 using Application.Catalogs.CatalogItems.CatalogItemServices;
 using Application.Catalogs.CatalogTypes;
@@ -6,6 +7,7 @@ using Application.Catalogs.CrudService.CatalogItems;
 using Application.Discounts;
 using Application.Discounts.AddNewDiscountService;
 using Application.Interfase.Context;
+using Application.UriComposer;
 using Application.Visitors.GetTodayReport;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -32,6 +34,8 @@ builder.Services.AddTransient<IImageUploadService, ImageUploadService>();
 builder.Services.AddTransient<ICatalogItemEditDeleteGetListService, CatalogItemEditDeleteGetListService>();
 builder.Services.AddTransient<IAddNewDiscountService, AddNewDiscountService>();
 builder.Services.AddTransient<IDiscountService, DiscountService>();
+builder.Services.AddTransient<IBannersService, BannersService>();
+builder.Services.AddTransient<IUriComposerService, UriComposerService>();
 
 
 #region connection String SqlServer

@@ -15,7 +15,6 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPLP
     {
         PaginatedItemDto<CatalogPLPDto> Execute(CatalogPLPRequestDto request);
 
-
     }
 
     public class GetCatalogItemPLPService : IGetCatalogItemPLPService
