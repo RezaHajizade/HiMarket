@@ -12,7 +12,7 @@ build_property.RootNamespace = Admin.EndPoint
 build_property.ProjectDir = C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint
 build_property._RazorSourceGeneratorDebug = 
 
