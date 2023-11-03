@@ -8,9 +8,16 @@ namespace Application.Dtos
 {
     public class PaginatedItemDto<TEntity> where TEntity : class
     {
+        //شماره صفحه ای که درونش قرار دادیم
         public int PageIndex { get; private set; }
+        
+        //درون این صفحه چندتا آیتم قراره نمایش داده بشه
         public int PageSize { get; private set; }
+
+        //تعداد کل آیتم ها
         public long Count { get; private set; }
+
+        //دیتایی که قراره برای کاربر بفرستیم
         public IEnumerable<TEntity> Data { get; private set; }
         public Pager Pager { get; private set; }
 

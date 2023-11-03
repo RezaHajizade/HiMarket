@@ -47,6 +47,14 @@ builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(con
 
 #endregion
 
+builder.Services.AddDistributedSqlServerCache(option => {
+    option.ConnectionString = connection;
+    option.SchemaName = "dbo";
+    option.TableName = "CacheData";
+});
+
+
+
 //mapper
 builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
 builder.Services.AddAutoMapper(typeof(CatalogVMMappingProfile));
@@ -79,8 +87,5 @@ app.UseEndpoints(endpoints =>
     endpoints.MapRazorPages();
     endpoints.MapControllers();
 });
-
-
-
 
 app.Run();

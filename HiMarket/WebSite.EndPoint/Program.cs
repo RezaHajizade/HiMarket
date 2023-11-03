@@ -47,6 +47,8 @@ builder.Services.AddTransient<IHomePageService, HomePageService>();
 builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();
 
+builder.Services.AddDistributedMemoryCache();
+
 //mapper
 builder.Services.AddAutoMapper(typeof(CatalogMappingProfile));
 builder.Services.AddAutoMapper(typeof(UserMappingProfile));
@@ -59,6 +61,13 @@ builder.Services.AddTransient<IIdentityDataBaseContext, IdentityDataBaseContext>
  
 string connection = builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
+
+builder.Services.AddDistributedSqlServerCache(option=>{
+    option.ConnectionString = connection;
+    option.SchemaName = "dbo";
+    option.TableName = "CacheData";
+});
+
 builder.Services.AddIdentityService(builder.Configuration);
 
 builder.Services.AddAuthorization();

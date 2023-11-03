@@ -20,7 +20,6 @@ namespace Application.Banners
     public class BannersService : IBannersService
     {
         private readonly IDataBaseContext context;
-
         public BannersService(IDataBaseContext context) 
         {
             this.context = context;

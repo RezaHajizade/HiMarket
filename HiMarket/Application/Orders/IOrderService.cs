@@ -36,6 +36,7 @@ namespace Application.Orders
                 .Include(p => p.Items)
                 .SingleOrDefault(p => p.Id == BasketId);
 
+
             int[] Ids = basket.Items.Select(p => p.CatalogItemId).ToArray();
             var catalogItems = context.CatalogItems
                 .Include(p => p.CatalogItemImages)

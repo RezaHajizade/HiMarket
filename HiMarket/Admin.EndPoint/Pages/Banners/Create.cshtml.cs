@@ -1,7 +1,9 @@
 using Application.Banners;
+using Infrastructure.ChaceHelpers;
 using Infrastructure.ExternalApi.ImageServer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Distributed;
 
 namespace Admin.EndPoint.Pages.Banners
 {
@@ -9,12 +11,15 @@ namespace Admin.EndPoint.Pages.Banners
     {
         private readonly IBannersService banners;
         private readonly IImageUploadService imageUploadService;
+        private readonly IDistributedCache _cache;
 
         public CreateModel(IBannersService banners,
-            IImageUploadService imageUploadService)
+            IImageUploadService imageUploadService,
+            IDistributedCache distributedCache)
         {
             this.banners = banners;
             this.imageUploadService = imageUploadService;
+            _cache = distributedCache;
         }
 
         [BindProperty]
@@ -34,6 +39,8 @@ namespace Admin.EndPoint.Pages.Banners
             {
                 Banner.Image = result.FirstOrDefault();
                 banners.AddBanner(Banner);
+
+                _cache.Remove(CacheHelper.GenerateHomePageCacheKey());
             }
             return RedirectToPage("Index");
         }

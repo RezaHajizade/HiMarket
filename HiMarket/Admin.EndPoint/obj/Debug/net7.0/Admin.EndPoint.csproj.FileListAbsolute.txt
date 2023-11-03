@@ -197,7 +197,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\re
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.AspNetCore.WebSockets.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.CSharp.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Configuration.Binder.dll
@@ -210,7 +209,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\re
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
@@ -238,8 +236,6 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\re
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.ObjectPool.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Options.dll
-C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.Primitives.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Extensions.WebEncoders.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.JSInterop.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\refs\Microsoft.Net.Http.Headers.dll
@@ -442,3 +438,8 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\ru
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Caching.SqlServer.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll

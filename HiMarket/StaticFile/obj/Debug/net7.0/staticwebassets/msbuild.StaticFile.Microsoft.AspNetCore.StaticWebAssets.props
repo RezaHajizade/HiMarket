@@ -1632,6 +1632,150 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2022\2022-11\d8144081-59ea-433a-95a6-15bf80cff7c4036.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\0aeff7e7-a0d4-4ce8-8b1a-a1f7b2452131banner-md-04.gif))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/0aeff7e7-a0d4-4ce8-8b1a-a1f7b2452131banner-md-04.gif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\0aeff7e7-a0d4-4ce8-8b1a-a1f7b2452131banner-md-04.gif))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\0f11f478-ac53-493d-bb56-3f9576d8709dslider-2.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/0f11f478-ac53-493d-bb56-3f9576d8709dslider-2.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\0f11f478-ac53-493d-bb56-3f9576d8709dslider-2.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\1ba8db16-eb4b-4a01-bad0-d44deb12b46abanner-sm-04.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/1ba8db16-eb4b-4a01-bad0-d44deb12b46abanner-sm-04.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\1ba8db16-eb4b-4a01-bad0-d44deb12b46abanner-sm-04.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\335b3dd7-5946-42a3-8e26-1a21cc49f692banner-sm-02.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/335b3dd7-5946-42a3-8e26-1a21cc49f692banner-sm-02.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\335b3dd7-5946-42a3-8e26-1a21cc49f692banner-sm-02.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\435d0c6c-4fb5-4748-b356-05d8e2f1f24ebanner-sm-01.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/435d0c6c-4fb5-4748-b356-05d8e2f1f24ebanner-sm-01.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\435d0c6c-4fb5-4748-b356-05d8e2f1f24ebanner-sm-01.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\6e9ede0f-b4e5-45f6-922c-fea2c54683c4banner-sm-03.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/6e9ede0f-b4e5-45f6-922c-fea2c54683c4banner-sm-03.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\6e9ede0f-b4e5-45f6-922c-fea2c54683c4banner-sm-03.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\83eda40f-7df7-4766-ad9b-23ed7f4ae62bslider-1.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/83eda40f-7df7-4766-ad9b-23ed7f4ae62bslider-1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\83eda40f-7df7-4766-ad9b-23ed7f4ae62bslider-1.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\a289fc54-1384-41b9-9610-c2b51f5600a7xl-banner.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/a289fc54-1384-41b9-9610-c2b51f5600a7xl-banner.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\a289fc54-1384-41b9-9610-c2b51f5600a7xl-banner.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\d47d68ec-c94f-40ff-a406-e130108d935dbanner-md-03.gif))">
+      <SourceType>Package</SourceType>
+      <SourceId>StaticFile</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/StaticFile</BasePath>
+      <RelativePath>Resources/images/2023/2023-7/d47d68ec-c94f-40ff-a406-e130108d935dbanner-md-03.gif</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Resources\images\2023\2023-7\d47d68ec-c94f-40ff-a406-e130108d935dbanner-md-03.gif))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\StaticFile.bundle.scp.css))">
       <SourceType>Package</SourceType>
       <SourceId>StaticFile</SourceId>

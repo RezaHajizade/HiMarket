@@ -20,7 +20,6 @@ namespace Admin.EndPoint.Pages.Discounts
         public void OnGet()
         {
         }
-
         public void OnPost()
         {
             addNewDiscountService.Execute(model);
