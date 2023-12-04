@@ -47,7 +47,7 @@ namespace Application.Discounts.AddNewDiscountService
                 newdiscount.CatalogItems = catalogItems;
             }
 
-            context.Discounts.Add(newdiscount);
+            context.Discount.Add(newdiscount);
             context.SaveChanges();
         }
     }
@@ -79,7 +79,6 @@ namespace Application.Discounts.AddNewDiscountService
         public int LimitationTimes { get; set; } = 0;
         [Display(Name = "اعمال برای محصول")]
         public List<int> appliedToCatalogItem { get; set; }
-
 
     }
 }

@@ -16,6 +16,8 @@ using Application.Visitors.SaveVisitorInfo;
 using Application.Visitors.VisitorOnline;
 using Infrastructure.IdentityConfigs;
 using Infrastructure.MappingProfile;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
 using Persistence.MongoContext;
@@ -109,6 +111,11 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "ProductDetail",
+    pattern: "Product/{Slug}",
+    defaults: new { controller="Product", action="Detail" });
 
 app.MapHub<OnlineVisitorHub>("/chathub");
 app.Run();

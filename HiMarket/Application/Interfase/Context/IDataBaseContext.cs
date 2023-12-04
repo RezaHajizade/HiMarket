@@ -28,7 +28,7 @@ namespace Application.Interfase.Context
         DbSet<Order> Orders { get; set; }
         DbSet<OrderItem> OrderItems { get; set; }
         DbSet<payment> Payments { get; set; }
-        DbSet<Discount> Discounts { get; set; }
+        DbSet<Discount> Discount { get; set; }
         DbSet<CatalogItemFavourite> catalogItemFavourites { get; set; }
         DbSet<Banner> Banners { get; set; }
         int SaveChanges();

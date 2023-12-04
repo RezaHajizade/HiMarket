@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "t/6MSvexk/I7tdeKwJpSfYCESwQjxOsR/a66M4Dzf/c=",
+  "Hash": "ykex7we5rM8GakbRNpFo5xFQzZXk8rVQ+fTEzVToAG0=",
   "Source": "WebSite.EndPoint",
   "BasePath": "_content/WebSite.EndPoint",
   "Mode": "Default",
@@ -1785,6 +1785,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Resources\\images\\2022\\2022-11\\d8144081-59ea-433a-95a6-15bf80cff7c4036.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\Resources\\images\\2023\\2023-11\\68532be6-bb64-4715-aa78-d7ec29591543banner-lg-01.gif",
+      "SourceId": "StaticFile",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\",
+      "BasePath": "_content/StaticFile",
+      "RelativePath": "Resources/images/2023/2023-11/68532be6-bb64-4715-aa78-d7ec29591543banner-lg-01.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Resources\\images\\2023\\2023-11\\68532be6-bb64-4715-aa78-d7ec29591543banner-lg-01.gif"
     },
     {
       "Identity": "C:\\Users\\AMINSYSTEM\\Desktop\\HiMarket\\HiMarket\\StaticFile\\wwwroot\\Resources\\images\\2023\\2023-7\\0aeff7e7-a0d4-4ce8-8b1a-a1f7b2452131banner-md-04.gif",

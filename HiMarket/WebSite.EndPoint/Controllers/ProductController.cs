@@ -20,9 +20,9 @@ namespace WebSite.EndPoint.Controllers
             return View(data);
         }
 
-        public IActionResult Detail(int Id)
+        public IActionResult Detail(string Slug)
         {
-            var data = getCatalogItemPDP.Execute(Id);
+            var data = getCatalogItemPDP.Execute(Slug);
             return View(data);
         }
     }

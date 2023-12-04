@@ -22,7 +22,7 @@ using Persistence.MongoContext;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddRazorPages();
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IGetTodayReportService, GetTodayReportService>();
@@ -41,8 +41,8 @@ builder.Services.AddTransient<IUriComposerService, UriComposerService>();
 #region connection String SqlServer
 
 builder.Services.AddScoped<IDataBaseContext, DataBaseContext>();
-string connection = builder.Configuration["ConnectionString:SqlServer"];
-//var connection= builder.Configuration["ConnectionString:SqlServer"];
+//string connection = builder.Configuration["ConnectionString:SqlServer"];
+var connection= builder.Configuration["ConnectionString:SqlServer"];
 builder.Services.AddDbContext<DataBaseContext>(option => option.UseSqlServer(connection));
 
 #endregion
@@ -75,6 +75,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -83,7 +84,7 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.UseEndpoints(endpoints =>
-{ 
+{
     endpoints.MapRazorPages();
     endpoints.MapControllers();
 });

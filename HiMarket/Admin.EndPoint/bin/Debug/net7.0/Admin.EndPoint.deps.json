@@ -38,6 +38,7 @@
           "Application": "1.0.0",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.0",
           "Infrastructure": "1.0.0",
+          "MD.PersianDateTime.Standard": "2.5.0",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "7.0.9",
           "Microsoft.Extensions.Caching.SqlServer": "8.0.0-rc.2.23480.2",
           "Persistence": "1.0.0",
@@ -521,6 +522,17 @@
         },
         "compile": {
           "lib/netstandard1.1/FubarCoder.RestSharp.Portable.HttpClient.dll": {}
+        }
+      },
+      "MD.PersianDateTime.Standard/2.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {
+            "assemblyVersion": "2.5.0.0",
+            "fileVersion": "2.5.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -4290,6 +4302,13 @@
       "sha512": "sha512-h6pTAjqkQW0j6lPm/gsxTMXBvx2Fbe6crZr+jpNgWOKs25S5umYngoJULAvo5YyBFvvN4v7CmCGZhFMWzxS8Ig==",
       "path": "fubarcoder.restsharp.portable.httpclient/4.0.8",
       "hashPath": "fubarcoder.restsharp.portable.httpclient.4.0.8.nupkg.sha512"
+    },
+    "MD.PersianDateTime.Standard/2.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xEhLsSr4reHEv5AC3fIgdJbAJBXxsX9YMvQAZeR8lMmzXZZiob1Bd4K2YKkjKgPYX5agOkJV/B+lwp0pPiDYPA==",
+      "path": "md.persiandatetime.standard/2.5.0",
+      "hashPath": "md.persiandatetime.standard.2.5.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
       "type": "package",

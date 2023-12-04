@@ -443,3 +443,4 @@ C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Mi
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Users\AMINSYSTEM\Desktop\HiMarket\HiMarket\Admin.EndPoint\bin\Debug\net7.0\MD.PersianDateTime.Standard.dll

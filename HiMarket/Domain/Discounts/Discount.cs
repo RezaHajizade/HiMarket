@@ -22,6 +22,7 @@ namespace Domain.Discounts
         public int DiscountAmount { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+
         public bool RequiresCouponCode { get; set; }
         public string CouponCode { get; set; }
 
@@ -35,13 +36,33 @@ namespace Domain.Discounts
 
         public ICollection<CatalogItem> CatalogItems { get; set; }
 
+
         public int LimitationTimes { get; set; }
+        [NotMapped]
         public DiscountLimitationType DiscountLimitation
         {
             get => (DiscountLimitationType)this.DiscountLimitationId;
             set => this.DiscountLimitationId = (int)value;
         }
         public int DiscountLimitationId { get; set; }
+
+
+
+        public int GetDiscountAmount(int amount)
+        {
+            var result = 0;
+
+            if (UsePercentage)
+            {
+                result = (((amount) * (DiscountPercentage)) / 100);
+            }
+            else
+            {
+                result = DiscountAmount;
+            }
+
+            return result;
+        }
     }
 
     public enum DiscountType
@@ -66,13 +87,11 @@ namespace Domain.Discounts
         /// </summary>
         [Display(Name = "بدونه محدودیت تعداد")]
         Unlimited = 0,
-
         /// <summary>
         /// فقط N بار
         /// </summary>
         [Display(Name = "فقط N بار")]
         NTimesOnly = 1,
-
         /// <summary>
         /// N بار به ازای هر مشتری
         /// </summary>

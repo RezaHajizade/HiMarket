@@ -207,6 +207,19 @@
           }
         }
       },
+      "MD.PersianDateTime.Standard/2.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/MD.PersianDateTime.Standard.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Authentication/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3626,6 +3639,20 @@
         "lib/xamarinios10/FubarCoder.RestSharp.Portable.HttpClient.xml",
         "tools/native/install.ps1",
         "tools/native/uninstall.ps1"
+      ]
+    },
+    "MD.PersianDateTime.Standard/2.5.0": {
+      "sha512": "xEhLsSr4reHEv5AC3fIgdJbAJBXxsX9YMvQAZeR8lMmzXZZiob1Bd4K2YKkjKgPYX5agOkJV/B+lwp0pPiDYPA==",
+      "type": "package",
+      "path": "md.persiandatetime.standard/2.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PersianDateTimePng.png",
+        "lib/netstandard2.0/MD.PersianDateTime.Standard.dll",
+        "lib/netstandard2.0/MD.PersianDateTime.Standard.xml",
+        "md.persiandatetime.standard.2.5.0.nupkg.sha512",
+        "md.persiandatetime.standard.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authentication/2.2.0": {
@@ -9614,6 +9641,7 @@
       "Application >= 1.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.0",
       "Infrastructure >= 1.0.0",
+      "MD.PersianDateTime.Standard >= 2.5.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 7.0.9",
       "Microsoft.Extensions.Caching.SqlServer >= 8.0.0-rc.2.23480.2",
       "Persistence >= 1.0.0"
@@ -9676,6 +9704,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[12.0.0, )"
+          },
+          "MD.PersianDateTime.Standard": {
+            "target": "Package",
+            "version": "[2.5.0, )"
           },
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
             "target": "Package",

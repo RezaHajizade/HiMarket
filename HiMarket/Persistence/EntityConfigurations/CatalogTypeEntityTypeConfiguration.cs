@@ -19,4 +19,15 @@ namespace Persistence.EntityConfigurations
                 .HasMaxLength(100);
         }
     }
+
+
+    public class CatalogItemEntityTypeConfiguration : IEntityTypeConfiguration<CatalogItem>
+    {
+        public void Configure(EntityTypeBuilder<CatalogItem> builder)
+        {
+            builder.Property(cb => cb.Slug)
+                .HasMaxLength(100)
+                .IsUnicode();
+        }
+    }
 }

@@ -12,7 +12,7 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
 {
     public interface IGetCatalogItemPDPService
     {
-        CatalogItemPDPDto Execute(int id);
+        CatalogItemPDPDto Execute(string Slug);
     }
 
 
@@ -28,14 +28,14 @@ namespace Application.Catalogs.CatalogItems.GetCatalogItemPDP
             this.mapper = mapper;
             this.uriComposer = uriComposer;
         }
-        public CatalogItemPDPDto Execute(int id)
+        public CatalogItemPDPDto Execute(string Slug)
         {
             var catalogitem = context.CatalogItems
                  .Include(p => p.CatalogItemFeatures)
                  .Include(p => p.CatalogItemImages)
                  .Include(p => p.CatalogType)
                  .Include(p => p.CatalogBrand)
-                 .SingleOrDefault(p => p.Id == id);
+                 .SingleOrDefault(p => p.Slug == Slug);
             catalogitem.VisitCount += 1;
             context.SaveChanges();
 

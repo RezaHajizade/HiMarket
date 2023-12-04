@@ -1,4 +1,8 @@
-﻿using Application.Interfase.Context;
+﻿using Application.Dtos;
+using Application.Interfase.Context;
+using Domain.Discounts;
+using Domain.Entity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,13 +41,13 @@ namespace Application.Discounts
             else
             {
                 var data = context.CatalogItems
-               .OrderByDescending(p => p.Id)
-               .Take(10)
-               .Select(p => new CatalogItemDto
-               {
-                   Id = p.Id,
-                   Name = p.Name
-               }).ToList();
+                    .OrderByDescending(p => p.Id)
+                    .Take(10)
+                    .Select(p => new CatalogItemDto
+                    {
+                        Id = p.Id,
+                        Name = p.Name
+                    }).ToList();
                 return data;
             }
 
@@ -54,4 +58,5 @@ namespace Application.Discounts
         public int Id { get; set; }
         public string Name { get; set; }
     }
+
 }
