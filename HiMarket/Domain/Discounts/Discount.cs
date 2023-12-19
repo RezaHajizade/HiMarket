@@ -46,8 +46,6 @@ namespace Domain.Discounts
         }
         public int DiscountLimitationId { get; set; }
 
-
-
         public int GetDiscountAmount(int amount)
         {
             var result = 0;
@@ -55,6 +53,7 @@ namespace Domain.Discounts
             if (UsePercentage)
             {
                 result = (((amount) * (DiscountPercentage)) / 100);
+
             }
             else
             {
@@ -63,6 +62,8 @@ namespace Domain.Discounts
 
             return result;
         }
+
+
     }
 
     public enum DiscountType
@@ -74,7 +75,7 @@ namespace Domain.Discounts
         [Display(Name = "تخفیف برای مشتری")]
         AssignedToUser = 3,
         [Display(Name = "تخفیف برای برند")]
-        AssignedToBrand = 3,
+        AssignedToBrand = 4,
     }
 
     /// <summary>

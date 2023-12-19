@@ -14,6 +14,8 @@ namespace Application.Discounts
     public interface IDiscountService
     {
         List<CatalogItemDto> GetCatalogItems(string searchKey);
+        bool ApplyDiscountInBasket(string CoponCode, int BasketId);
+        bool RemoveDiscountFromBasket(int BasketId);
     }
 
     public class DiscountService : IDiscountService
@@ -23,6 +25,21 @@ namespace Application.Discounts
         public DiscountService(IDataBaseContext context)
         {
             this.context = context;
+        }
+
+        public bool ApplyDiscountInBasket(string CoponCode, int BasketId)
+        {
+            var basket = context.Baskets
+               .Include(p => p.Items)
+               .Include(p => p.AppliedDiscount)
+               .FirstOrDefault(p => p.Id == BasketId);
+
+            var discount = context.Discount.Where(p => p.CouponCode.Equals(CoponCode))
+                .FirstOrDefault();
+
+            basket.ApplyDiscountCode(discount);
+            context.SaveChanges();
+            return true;
         }
 
         public List<CatalogItemDto> GetCatalogItems(string searchKey)
@@ -50,6 +67,15 @@ namespace Application.Discounts
                     }).ToList();
                 return data;
             }
+
+        }
+
+        public bool RemoveDiscountFromBasket(int BasketId)
+        {
+            var basket = context.Baskets.Find(BasketId);
+            basket.RemoveDicount();
+            context.SaveChanges();
+            return true;
 
         }
     }

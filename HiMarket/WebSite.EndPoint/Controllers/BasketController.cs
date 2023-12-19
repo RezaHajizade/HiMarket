@@ -1,4 +1,5 @@
 ﻿using Application.BasketService;
+using Application.Discounts;
 using Application.Orders;
 using Application.Payments;
 using Application.Users;
@@ -22,19 +23,22 @@ namespace WebSite.EndPoint.Controllers
         private readonly IUserAddressService userAddressService;
         private readonly IOrderService orderService;
         private readonly IPaymentService paymentService;
+        private readonly IDiscountService discountService;
         private string userId = null;
 
         public BasketController(IBasketService basketService,
             SignInManager<User> signInManager,
             IUserAddressService userAddressService,
             IOrderService orderService,
-            IPaymentService paymentService)
+            IPaymentService paymentService,
+            IDiscountService discountService)
         {
             this.basketService = basketService;
             this.signInManager = signInManager;
             this.userAddressService = userAddressService;
             this.orderService = orderService;
             this.paymentService = paymentService;
+            this.discountService = discountService;
         }
 
         [AllowAnonymous]
@@ -129,6 +133,21 @@ namespace WebSite.EndPoint.Controllers
             cookieOption.Expires = DateTime.Now.AddYears(1);
             Response.Cookies.Append(basketCookieName, userId, cookieOption);
 
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public IActionResult ApplyDiscount(string CouponCode,int BasketId)
+        {
+            discountService.ApplyDiscountInBasket(CouponCode, BasketId);
+
+            return RedirectToAction(nameof(Index));
+
+        }
+        [AllowAnonymous]
+        public IActionResult RemoveDiscount(int Id)
+        {
+            discountService.RemoveDiscountFromBasket(Id);
+            return RedirectToAction(nameof(Index));
         }
 
     }

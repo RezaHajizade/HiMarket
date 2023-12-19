@@ -4,6 +4,7 @@ using Application.Catalogs.CatalogItems.GetCatalogItemPDP;
 using Application.Catalogs.CatalogItems.GetCatalogItemPLP;
 using Application.Catalogs.CatalogTypes;
 using Application.Catalogs.GetMenuItem;
+using Application.Discounts;
 using Application.HomePageService;
 using Application.Interfase.Context;
 using Application.Orders;
@@ -45,6 +46,7 @@ builder.Services.AddTransient<IPaymentService, PaymentService>();
 builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<ICustomerOrderService, CustomerOrderService>();
 builder.Services.AddTransient<IHomePageService, HomePageService>();
+builder.Services.AddTransient<IDiscountService, DiscountService>();
 
 builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();

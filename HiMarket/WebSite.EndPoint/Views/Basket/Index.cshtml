@@ -11,6 +11,14 @@
     <div class="row mb-4">
         <div class="col-xl-9 col-lg-8 col-md-8 mb-md-0 mb-3">
             <div class="checkout-section shadow-around">
+
+                @if (TempData["InvalidMessage"] != null)
+                {
+                    <div class="alert alert-warning">
+                        <b> @TempData["InvalidMessage"]  </b><br />
+                    </div>
+                }
+
                 <div class="checkout-step">
                     <ul>
                         <li class="active"><span>سبد خرید</span></li>
@@ -25,7 +33,7 @@
                 <div class="checkout-section-content">
                     <div class="cart-items">
 
-                        @foreach (var item in Model.basketItems)
+                        @foreach (var item in Model.Items)
                         {
                             <div class="cart-item py-4 px-3">
                                 <div class="item-thumbnail">
@@ -50,11 +58,11 @@
                                             </li>
                                             <li>
                                                 <i class="far fa-store-alt text-muted"></i>
-                                                <span>های مارکت</span>
+                                                <span></span>
                                             </li>
                                             <li>
                                                 <i class="far fa-clipboard-check text-primary"></i>
-                                                <span> @item.Quantity</span>
+                                                <span>موجود در انبار</span>
                                             </li>
                                         </ul>
                                         <div class="item-quantity--item-price">
@@ -62,31 +70,25 @@
                                                 <div class="num-block">
                                                     <div class="num-in">
                                                         <span class="plus"></span>
-                                                        <input type="text" onchange="setQuantity('@item.Id')" class="in-num" id="quantity-@item.Id" value="@item.Quantity" readonly="">
+                                                        <input type="text" class="in-num" onchange="SetQuantity('@item.Id')" id="quantity-@item.Id" value="@item.Quantity" readonly="">
                                                         <span class="minus dis"></span>
                                                     </div>
                                                 </div>
                                                 <form method="post" asp-action="RemoveItemFromBasket">
-                                                    <input name="ItemId" type="hidden" value="@item.Id">
+                                                    <input name="ItemId" type="hidden" value="@item.Id" />
+
                                                     <button type="submit" class="item-remove-btn mr-3">
                                                         <i class="far fa-trash-alt"></i>
                                                         حذف
                                                     </button>
                                                 </form>
-
                                             </div>
                                             <div class="item-price">
-
                                                 @{
                                                     var price = (item.UnitPrice * item.Quantity);
-                                                    <text>
-                                                        <p>
-                                                            @price.ToString("n0")
 
-                                                        </p>
-                                                    </text>
+                                                    <text> <p>@price.ToString("n0")</p></text>
                                                 }
-
                                                 <span class="text-sm mr-1">تومان</span>
                                             </div>
                                         </div>
@@ -101,26 +103,35 @@
             </div>
         </div>
         <div class="col-xl-3 col-lg-4 col-md-4">
-            <div class="shadow-around pt-3" id="quantity">
+            <div class="shadow-around pt-3">
                 <div class="d-flex justify-content-between px-3 py-2">
-                    <span class="text-muted">قیمت کالاها (@Model.basketItems.Count())</span>
+                    <span class="text-muted">قیمت کالاها (@Model.Items.Count)</span>
                     <span class="text-muted">
-                        @Model.basketItems.Sum(p=>p.Quantity*p.UnitPrice).ToString("n0")
+                        @Model.TotalWithOutDiscount().ToString("n0")
                         <span class="text-sm">تومان</span>
                     </span>
                 </div>
-                <div class="d-flex justify-content-between px-3 py-2">
-                    <span class="text-muted">تخفیف کالاها</span>
-                    <span class="text-danger">
-                        (۲٪) ۵۱۰,۰۰۰
-                        <span class="text-sm">تومان</span>
-                    </span>
-                </div>
+                @if (Model.DiscountAmount > 0)
+                {
+                    <div class="d-flex justify-content-between px-3 py-2">
+                        <span class="text-muted">تخفیف کالاها</span>
+                        <span class="text-danger">
+                            @Model.DiscountAmount.ToString("n0")
+                            <span class="text-sm">تومان</span>
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-between px-3 py-2">
+                        <a asp-action="RemoveDiscount" asp-route-id="@Model.Id" class="text-danger">
+                            <i class="fa fa-closed-captioning"></i>
+                            حذف تخفیف
+                        </a>
+                    </div>
+                }
                 <hr>
                 <div class="d-flex justify-content-between px-3 py-2">
                     <span class="font-weight-bold">جمع</span>
                     <span class="font-weight-bold">
-                        @Model.basketItems.Sum(p=>p.Quantity*p.UnitPrice).ToString("n0")
+                        @Model.Total().ToString("n0")
                         <span class="text-sm">تومان</span>
                     </span>
                 </div>
@@ -128,17 +139,40 @@
                 <div class="d-flex justify-content-between px-3 py-2">
                     <span class="font-weight-bold">مبلغ قابل پرداخت</span>
                     <span class="font-weight-bold">
-                        @Model.basketItems.Sum(p=>p.Quantity*p.UnitPrice).ToString("n0")
+                        @Model.Total().ToString("n0")
                         <span class="text-sm">تومان</span>
                     </span>
                 </div>
                 <div class="d-flex px-3 py-4">
                     <a asp-action="ShippingPayment" class="btn btn-danger btn-block py-2">ادامه فرایند خرید</a>
                 </div>
+
+                <form method="post" asp-action="ApplyDiscount">
+                    <input type="hidden" value="@Model.Id" name="BasketId" />
+                    <hr />
+                    <div class="d-flex justify-content-between px-3 py-2">
+                        <p class="small">آیا کد تخفیف دارید؟</p>
+                    </div>
+                    <div class="d-flex justify-content-between px-3 py-2">
+
+                        <span class="font-weight-bold"> کد تخفیف : </span>
+                        <span class="font-weight-bold">
+
+                            <input type="text" name="CouponCode" class="form-control" />
+                        </span>
+                    </div>
+                    <div class="d-flex px-3 py-4">
+                        <button class="btn btn-block py-2 btn-outline-primary">ثبت کد تخفیف</button>
+                    </div>
+                </form>
+
             </div>
+
+
         </div>
     </div>
 </div>
+
 
 @section Scripts
     {

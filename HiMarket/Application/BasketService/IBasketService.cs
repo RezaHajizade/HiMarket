@@ -60,14 +60,16 @@ namespace Application.BasketService
             {
                 BuyerId = Basket.BuyerId,
                 Id = Basket.Id,
-                basketItems = Basket.Items.Select(item => new BasketItemDto
+                DiscountAmount = Basket.DiscountAmount,
+                Items = Basket.Items.Select(item => new BasketItemDto
                 {
                     Id = item.Id,
-                    CatalogItemId = item.CatalogItemId,
+                    CatalogItemid = item.CatalogItemId,
                     CatalogName = item.CatalogItem.Name,
                     Quantity = item.Quantity,
                     UnitPrice = item.UnitPrice,
-                    ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?.CatalogItemImages?.FirstOrDefault()?.Src ?? "")
+                    ImageUrl = uriComposerService.ComposeImageUri(item?.CatalogItem?
+                    .CatalogItemImages?.FirstOrDefault()?.Src ?? "")
                 }).ToList(),
             };
         }
@@ -114,9 +116,10 @@ namespace Application.BasketService
             {
                 Id = basket.Id,
                 BuyerId = basket.BuyerId,
-                basketItems = basket.Items.Select(item => new BasketItemDto
+                DiscountAmount = basket.DiscountAmount,
+                Items = basket.Items.Select(item => new BasketItemDto
                 {
-                    CatalogItemId = item.CatalogItemId,
+                    CatalogItemid = item.CatalogItemId,
                     Id = item.Id,
                     CatalogName = item.CatalogItem.Name,
                     Quantity = item.Quantity,
@@ -131,6 +134,8 @@ namespace Application.BasketService
         public void TransferBasket(string anonymousId, string UserId)
         {
             var anonymousBasket = context.Baskets
+                .Include(p => p.Items)
+                .Include(p => p.AppliedDiscount)
                 .FirstOrDefault(p => p.BuyerId == anonymousId);
 
             if (anonymousBasket == null) return;
@@ -147,6 +152,11 @@ namespace Application.BasketService
                 userBasket.AddItem(item.UnitPrice, item.Quantity, item.CatalogItemId);
             }
 
+            if (anonymousBasket.AppliedDiscount != null)
+            {
+                userBasket.ApplyDiscountCode(anonymousBasket.AppliedDiscount);
+            }
+
             context.Baskets.Remove(anonymousBasket);
 
             context.SaveChanges();
@@ -157,25 +167,37 @@ namespace Application.BasketService
     {
         public int Id { get; set; }
         public string BuyerId { get; set; }
-        public List<BasketItemDto> basketItems { get; set; } = new List<BasketItemDto>();
+        public List<BasketItemDto> Items { get; set; } = new List<BasketItemDto>();
+        public int DiscountAmount { get; set; }
+
         public int Total()
         {
-            if (basketItems.Count > 0)
+            if (Items.Count > 0)
             {
-                return basketItems.Sum(p => p.UnitPrice * p.Quantity);
+                int total = Items.Sum(p => p.UnitPrice * p.Quantity);
+                total -= DiscountAmount;
+                return total;
             }
             return 0;
         }
-
+        public int TotalWithOutDiscount()
+        {
+            if (Items.Count > 0)
+            {
+                int total = Items.Sum(p => p.UnitPrice * p.Quantity);
+                return total;
+            }
+            return 0;
+        }
     }
 
     public class BasketItemDto
     {
         public int Id { get; set; }
-        public int CatalogItemId { get; set; }
+        public int CatalogItemid { get; set; }
         public string CatalogName { get; set; }
-        public int Quantity { get; set; }
         public int UnitPrice { get; set; }
+        public int Quantity { get; set; }
         public string ImageUrl { get; set; }
     }
 }

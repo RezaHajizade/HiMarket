@@ -34,6 +34,7 @@ namespace Application.Orders
         {
             var basket = context.Baskets
                 .Include(p => p.Items)
+                .Include(p => p.AppliedDiscount)
                 .SingleOrDefault(p => p.Id == BasketId);
 
 
@@ -58,7 +59,7 @@ namespace Application.Orders
             var userAddress = context.UserAddress.SingleOrDefault(p => p.Id == UserAddressId);
 
             var address = mapper.Map<Address>(userAddress);
-            var order = new Order(basket.BuyerId, address, orderItems, paymentMethod);
+            var order = new Order(basket.BuyerId, address, orderItems, paymentMethod, basket.AppliedDiscount);
             context.Orders.Add(order);
             context.Baskets.Remove(basket);
             context.SaveChanges();

@@ -34,6 +34,8 @@ namespace Application.Payments
             var payement = context.Payments
                 .Include(p => p.Order)
                 .ThenInclude(p => p.OrderItems)
+                .Include(p=>p.Order)
+                .ThenInclude(p=>p.AppliedDiscount)
                 .SingleOrDefault(p => p.Id == Id);
 
 
@@ -61,6 +63,7 @@ namespace Application.Payments
         {
             var order = context.Orders
                 .Include(p => p.OrderItems)
+                .Include(p=>p.AppliedDiscount)
                 .SingleOrDefault(p => p.Id == OrderId);
             if (order == null)
                 throw new Exception("");

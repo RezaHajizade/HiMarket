@@ -1,5 +1,6 @@
 ﻿using Domain.Attributes;
 using Domain.Catalogs;
+using Domain.Discounts;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
@@ -11,30 +12,65 @@ using System.Threading.Tasks;
 namespace Domain.Order
 {
     [Auditable]
-    public  class Order
+    public class Order
     {
         public int Id { get; set; }
-        public string UserId { get;private set; }
-        public DateTime OrderDate { get;private set; } = DateTime.Now;
-        public Address Address { get;private set; }
-        public PaymentMethod PaymentMethod { get;private set; }
-        public PaymentStatus PaymentStatus { get;private set; }
-         public OrderStatus OrderStatus { get; private set; }
+        public string UserId { get; private set; }
+        public DateTime OrderDate { get; private set; } = DateTime.Now;
+        public Address Address { get; private set; }
+        public PaymentMethod PaymentMethod { get; private set; }
+        public PaymentStatus PaymentStatus { get; private set; }
+        public OrderStatus OrderStatus { get; private set; }
 
-        private readonly List<OrderItem> _orderItems=new List<OrderItem>();
+        private readonly List<OrderItem> _orderItems = new List<OrderItem>();
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems.AsReadOnly();
 
-        public Order(string userId,Address address,List<OrderItem> orderItems,PaymentMethod paymentMethod)
+        public decimal DiscountAmount { get; private set; }
+        public Discount AppliedDiscount { get;private set; }
+        public int? AppliedDiscountId { get;private set; }
+
+        public Order(string userId, Address address, List<OrderItem> orderItems
+            , PaymentMethod paymentMethod
+            , Discount discount)
 
         {
-            UserId=userId;
-            Address=address;
-            _orderItems=orderItems;
-            PaymentMethod=paymentMethod;
+            UserId = userId;
+            Address = address;
+            _orderItems = orderItems;
+            PaymentMethod = paymentMethod;
+            if (discount != null)
+            {
+                ApplyDiscountCode(discount);
+            }
         }
         public Order()
         {
-             
+
+        }
+
+
+        public int TotalPrice()
+        {
+            int totalPrice = _orderItems.Sum(p => p.UnitPrice * p.Units);
+            totalPrice -= AppliedDiscount.GetDiscountAmount(totalPrice);
+            return totalPrice;
+        }
+
+        /// <summary>
+        /// دریافت مبلغ کل بدون درنظر گرفتن کد تخفیف
+        /// </summary>
+        /// <returns></returns>
+        public int TotalPriceWithOutDiscount()
+        {
+            int totalPrice = _orderItems.Sum(p => p.UnitPrice * p.Units);
+            return totalPrice;
+        }
+
+        public void ApplyDiscountCode(Discount discount)
+        {
+            this.AppliedDiscount = discount;
+            this.AppliedDiscountId = discount.Id;
+            this.DiscountAmount = discount.GetDiscountAmount(TotalPrice());
         }
 
         /// <summary>
@@ -58,7 +94,7 @@ namespace Domain.Order
         /// </summary>
         public void OrderReturned()
         {
-            OrderStatus=OrderStatus.Returned;
+            OrderStatus = OrderStatus.Returned;
         }
 
         /// <summary>
@@ -68,23 +104,20 @@ namespace Domain.Order
         {
             OrderStatus = OrderStatus.Cancelled;
         }
-        public int TotalPrice()
-        {
-            return _orderItems.Sum(p => p.UnitPrice * p.Units);
-        }
+
     }
     [Auditable]
     public class OrderItem
     {
         public int Id { get; set; }
         public CatalogItem catalogItem { get; set; }
-        public int CatalogItemId { get;private set; }
+        public int CatalogItemId { get; private set; }
         public string ProductName { get; private set; }
         public string PictureUri { get; private set; }
-        public int UnitPrice { get; private set; } 
+        public int UnitPrice { get; private set; }
         public int Units { get; private set; }
 
-        public OrderItem(int catalogItemId,string productName,string pictureUri,
+        public OrderItem(int catalogItemId, string productName, string pictureUri,
             int unitPrice, int units)
         {
             CatalogItemId = catalogItemId;
@@ -96,12 +129,12 @@ namespace Domain.Order
         //ef core
         public OrderItem()
         {
-            
+
         }
     }
 
     public class Address
-    { 
+    {
         public string State { get; private set; }
         public string City { get; private set; }
         public string ZipCode { get; private set; }

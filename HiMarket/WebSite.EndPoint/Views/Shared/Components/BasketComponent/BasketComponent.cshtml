@@ -11,7 +11,7 @@
 
         @if (Model != null)
         {
-            <span class="bag-items-number">@Model.basketItems.Count</span>
+            <span class="bag-items-number">@Model.Items.Count</span>
         }
         else
         {
@@ -23,7 +23,7 @@
         <li class="cart-items">
             <ul class="do-nice-scroll">
                 @if (Model != null)
-                    foreach (var item in Model.basketItems)
+                    foreach (var item in Model.Items)
                     {
                         <li class="cart-item">
                             <span class="d-flex align-items-center mb-2">
@@ -58,6 +58,7 @@
             <span class="d-block text-center mb-3">
                 @if (Model != null)
                 {
+                  
                     <p>
                         مبلغ کل:
                         <span class="total">@Model.Total().ToString("n0")</span>
