@@ -47,6 +47,7 @@ builder.Services.AddTransient<ICatalogItemService, CatalogItemService>();
 builder.Services.AddTransient<ICustomerOrderService, CustomerOrderService>();
 builder.Services.AddTransient<IHomePageService, HomePageService>();
 builder.Services.AddTransient<IDiscountService, DiscountService>();
+builder.Services.AddTransient<IDiscountHistoryService, DiscountHistoryService>();
 
 builder.Services.AddScoped<SaveVisitorFilter>();
 builder.Services.AddSignalR();

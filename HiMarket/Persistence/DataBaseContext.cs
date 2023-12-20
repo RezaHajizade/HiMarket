@@ -40,6 +40,7 @@ namespace Persistence
         public DbSet<Discount> Discount  { get; set; }
         public DbSet<CatalogItemFavourite> catalogItemFavourites  { get; set; }
         public DbSet<Banner> Banners { get; set; }
+        public DbSet<DiscountUsageHistory> DiscountUsageHistory { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             foreach (var entityType in builder.Model.GetEntityTypes())

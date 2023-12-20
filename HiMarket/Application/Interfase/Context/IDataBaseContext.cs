@@ -31,6 +31,7 @@ namespace Application.Interfase.Context
         DbSet<Discount> Discount { get; set; }
         DbSet<CatalogItemFavourite> catalogItemFavourites { get; set; }
         DbSet<Banner> Banners { get; set; }
+        DbSet<DiscountUsageHistory> DiscountUsageHistory { get; set; }
         int SaveChanges();
         int SaveChanges(bool acceptAllChangesOnSuccess);
         Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default);

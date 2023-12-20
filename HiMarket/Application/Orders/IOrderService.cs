@@ -1,4 +1,5 @@
-﻿using Application.Interfase.Context;
+﻿using Application.Discounts;
+using Application.Interfase.Context;
 using Application.UriComposer;
 using AutoMapper;
 using Domain.Baskets;
@@ -23,12 +24,17 @@ namespace Application.Orders
         private readonly IDataBaseContext context;
         private readonly IMapper mapper;
         private readonly IUriComposerService uriComposerService;
+        private readonly IDiscountHistoryService discountHistoryService;
 
-        public OrderService(IDataBaseContext context, IMapper mapper, IUriComposerService uriComposerService)
+        public OrderService(IDataBaseContext context,
+            IMapper mapper,
+            IUriComposerService uriComposerService,
+            IDiscountHistoryService discountHistoryService)
         {
             this.context = context;
             this.mapper = mapper;
             this.uriComposerService = uriComposerService;
+            this.discountHistoryService = discountHistoryService;
         }
         public int CreateOrder(int BasketId, int UserAddressId, PaymentMethod paymentMethod)
         {
@@ -63,6 +69,12 @@ namespace Application.Orders
             context.Orders.Add(order);
             context.Baskets.Remove(basket);
             context.SaveChanges();
+
+            if (basket.AppliedDiscount != null)
+            {
+                discountHistoryService.InsertDiscountUsageHistory(basket.Id, order.Id);
+            }
+
             return order.Id;
         }
     }
