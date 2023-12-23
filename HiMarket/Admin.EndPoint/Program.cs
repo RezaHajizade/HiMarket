@@ -36,6 +36,8 @@ builder.Services.AddTransient<IAddNewDiscountService, AddNewDiscountService>();
 builder.Services.AddTransient<IDiscountService, DiscountService>();
 builder.Services.AddTransient<IBannersService, BannersService>();
 builder.Services.AddTransient<IUriComposerService, UriComposerService>();
+builder.Services.AddTransient<IDiscountHistoryService, DiscountHistoryService>();
+
 
 
 #region connection String SqlServer

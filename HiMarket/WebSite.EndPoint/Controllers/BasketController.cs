@@ -24,6 +24,7 @@ namespace WebSite.EndPoint.Controllers
         private readonly IOrderService orderService;
         private readonly IPaymentService paymentService;
         private readonly IDiscountService discountService;
+        private readonly UserManager<User> userManager;
         private string userId = null;
 
         public BasketController(IBasketService basketService,
@@ -31,7 +32,8 @@ namespace WebSite.EndPoint.Controllers
             IUserAddressService userAddressService,
             IOrderService orderService,
             IPaymentService paymentService,
-            IDiscountService discountService)
+            IDiscountService discountService,
+            UserManager<User> userManager)
         {
             this.basketService = basketService;
             this.signInManager = signInManager;
@@ -39,6 +41,7 @@ namespace WebSite.EndPoint.Controllers
             this.orderService = orderService;
             this.paymentService = paymentService;
             this.discountService = discountService;
+            this.userManager = userManager;
         }
 
         [AllowAnonymous]
@@ -138,7 +141,16 @@ namespace WebSite.EndPoint.Controllers
         [HttpPost]
         public IActionResult ApplyDiscount(string CouponCode,int BasketId)
         {
-            discountService.ApplyDiscountInBasket(CouponCode, BasketId);
+            var user=userManager.GetUserAsync(User).Result;
+            var validDiscount = discountService.IsDiscountValid(CouponCode, user);
+            if(validDiscount.IsSuccess)
+            {
+                discountService.ApplyDiscountInBasket(CouponCode, BasketId);
+            }
+            else
+            {
+                TempData["InvalidMessage"]=string.Join(Environment.NewLine, validDiscount.Message.Select(a=>String.Join(",",a)));
+            }
 
             return RedirectToAction(nameof(Index));
 
